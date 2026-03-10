@@ -1,756 +1,1678 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr" class="locked">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Louis BERTRAND — Portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Louis BERTRAND — Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- ============================================================
+    <!-- ============================================================
        ✏️  DONNÉES — seul bloc à modifier pour personnaliser
        ============================================================ -->
-  <script>
-  const DATA = {
-    name:     "Louis BERTRAND",
-    role:     "Technicien Systèmes & Réseaux",
-    tagline:  "BTS SIO • Infrastructure • Cybersécurité",
-    email:    "louis.bertrand713@gmail.com",
-    phone:    "+33 7 84 93 73 12",
-    location: "Chartres, France",
-    github:   "https://github.com/Louis-bertrand-gh",
-    linkedin: "https://linkedin.com/in/bertrand-louis",
-    about:    "Passionné par les systèmes d'information et la cybersécurité, je construis des infrastructures fiables et sécurisées. En formation BTS SIO SISR, je combine rigueur technique et esprit d'équipe pour relever des défis concrets.",
-    skills: [
-      { category: "Systèmes",          icon: "🖥️", items: ["Windows Server", "Linux Debian / Ubuntu", "Proxmox", "VirtualBox"] },
-      { category: "Réseaux",           icon: "🌐", items: ["Switch / Routeur", "Pare-feu pfSense", "VLAN", "TCP/IP"] },
-      { category: "Services",          icon: "⚙️", items: ["Active Directory", "DHCP / DNS", "Apache", "Ansible"] },
-      { category: "Cybersécurité",     icon: "🔒", items: ["Analyse des menaces", "Sécurité réseau", "Gestion des accès"] },
-      { category: "Gestion de Projet", icon: "📋", items: ["Documentation technique", "Support utilisateur", "Conduite de projet IT"] }
-    ],
-    education: [
-      { period: "2024 — 2026", title: "BTS Services Informatiques aux Organisations (SIO)", option: "Solutions d'Infrastructure, Systèmes et Réseaux (SISR)", school: "Lycée Fulbert — Chartres" },
-      { period: "2023 — 2024", title: "Terminale STI2D option ITEC", option: "Baccalauréat Technologique — Mention Assez Bien", school: "Lycée Rémi Belleau — Nogent-Le-Rotrou" }
-    ],
-    experiences: [
-      { period: "Janvier — Fevrier 2026", role: "Stagiaire — Informatique", company: "Huttopia - Saint Genis les Oilliers", tasks: ["Support utilisateur GLPI.", "Projet configuration matérielle.", "."] },
-      { period: "Juil. — Nov. 2025", role: "Saisonnier — Tourisme", company: "Huttopia Village de Senonches", tasks: ["Amélioration des compétences de service au bar.", "Développement des compétences de service en cuisine.", "Maîtrise des règles d'hygiène."] },
-      { period: "Mai — Juin 2025", role: "Stagiaire — Informatique", company: "Entreprise XTrempro - Senonches", tasks: ["Support hardware.", "Installation Logiciel.", "."] },
-      { period: "Juil. — Août 2024", role: "Saisonnier — Tourisme", company: "Huttopia Village de Senonches",  tasks: ["Travail en équipe et en autonomie.", "Organisation et gestion de l'inventaire."] }
-    ],
-    projects: [
-      { title: "Infrastructure Réseau Complète", tech: ["Proxmox", "pfSense", "Active Directory"], desc: "Déploiement d'une infrastructure virtualisée complète avec gestion centralisée des utilisateurs, pare-feu et segmentation VLAN.", link: "#" },
-      { title: "Serveur de Virtualisation",      tech: ["Proxmox", "VirtualBox", "Debian"],       desc: "Hyperviseur Proxmox hébergeant plusieurs VMs avec snapshots automatisés et gestion fine des ressources.", link: "#" },
-      { title: "Déploiement Ansible",            tech: ["Ansible", "Linux", "YAML"],              desc: "Automatisation du déploiement de serveurs Linux via des playbooks Ansible pour réduire les erreurs de configuration.", link: "#" },
-      { title: "Audit Sécurité Réseau",          tech: ["Nmap", "Wireshark", "pfSense"],          desc: "Évaluation des vulnérabilités d'une infrastructure réseau, identification des menaces et mise en place de contre-mesures.", link: "#" },
-      { title: "Déploiement Ansible",            tech: ["Ansible", "Linux", "YAML"],              desc: "Automatisation du déploiement de serveurs Linux via des playbooks Ansible pour réduire les erreurs de configuration.", link: "#" },
-      { title: "Documentation Technique",        tech: ["Markdown", "GitHub Pages", "Documentation"], desc: "Documentação complète d'un projet avec architecture, procédures et guides d'utilisation sur plateau sportludique.", link: "https://xola-max.github.io/gp-orleans-sportludique2025-2026/" }
-    ],
-    qualities:  ["Esprit d'équipe", "Polyvalent", "Souriant", "Ponctuel", "Curieux", "Rigoureux"],
-    languages:  [{ lang: "Français", level: "Natif", pct: 100 }, { lang: "Anglais", level: "B1", pct: 50 }],
-    interests:  ["💻 Technologie", "🎬 Cinéma", "⚽ Sport"]
-  };
-  </script>
+    <script>
+      const DATA = {
+        name: "Louis BERTRAND",
+        role: "Technicien Systèmes & Réseaux",
+        tagline: "BTS SIO • Infrastructure • Cybersécurité",
+        email: "louis.bertrand713@gmail.com",
+        phone: "+33 7 84 93 73 12",
+        location: "Chartres, France",
+        github: "https://github.com/Louis-bertrand-gh",
+        linkedin: "https://linkedin.com/in/bertrand-louis",
+        about:
+          "Passionné par les systèmes d'information et la cybersécurité, je construis des infrastructures fiables et sécurisées. En formation BTS SIO SISR, je combine rigueur technique et esprit d'équipe pour relever des défis concrets.",
+        skills: [
+          {
+            category: "Systèmes",
+            icon: "🖥️",
+            items: [
+              "Windows Server",
+              "Windows 10/11",
+              "Linux Debian / Ubuntu",
+              "Proxmox",
+              "VirtualBox",
+            ],
+          },
+          {
+            category: "Réseaux",
+            icon: "🌐",
+            items: ["Switch / Routeur", "Pare-feu pfSense", "VLAN", "TCP/IP"],
+          },
+          {
+            category: "Services",
+            icon: "⚙️",
+            items: ["Active Directory", "DHCP / DNS", "Apache", "Ansible"],
+          },
+          {
+            category: "Cybersécurité",
+            icon: "🔒",
+            items: [
+              "Analyse des menaces",
+              "Sécurité réseau",
+              "Gestion des accès",
+            ],
+          },
+          {
+            category: "Gestion de Projet",
+            icon: "📋",
+            items: [
+              "Documentation technique",
+              "Support utilisateur",
+              "Conduite de projet IT",
+            ],
+          },
+        ],
+        education: [
+          {
+            period: "2024 — 2026",
+            title: "BTS Services Informatiques aux Organisations (SIO)",
+            option: "Solutions d'Infrastructure, Systèmes et Réseaux (SISR)",
+            school: "Lycée Fulbert — Chartres",
+          },
+          {
+            period: "2023 — 2024",
+            title: "Terminale STI2D option ITEC",
+            option: "Baccalauréat Technologique — Mention Assez Bien",
+            school: "Lycée Rémi Belleau — Nogent-Le-Rotrou",
+          },
+        ],
+        experiences: [
+          {
+            period: "Janvier — Fevrier 2026",
+            role: "Stagiaire — Informatique",
+            company: "Huttopia - Saint Genis les Oilliers",
+            tasks: [
+              "Support utilisateur GLPI.",
+              "Projet configuration matérielle.",
+              ".",
+            ],
+          },
+          {
+            period: "Juil. — Nov. 2025",
+            role: "Saisonnier — Tourisme",
+            company: "Huttopia Village de Senonches",
+            tasks: [
+              "Amélioration des compétences de service au bar.",
+              "Développement des compétences de service en cuisine.",
+              "Maîtrise des règles d'hygiène.",
+            ],
+          },
+          {
+            period: "Mai — Juin 2025",
+            role: "Stagiaire — Informatique",
+            company: "Entreprise XTrempro - Senonches",
+            tasks: ["Support hardware.", "Installation Logiciel.", "."],
+          },
+          {
+            period: "Juil. — Août 2024",
+            role: "Saisonnier — Tourisme",
+            company: "Huttopia Village de Senonches",
+            tasks: [
+              "Travail en équipe et en autonomie.",
+              "Organisation et gestion de l'inventaire.",
+            ],
+          },
+        ],
+        projects: [
+          {
+            title: "Infrastructure Réseau Complète",
+            tech: ["Proxmox", "pfSense", "Active Directory"],
+            desc: "Déploiement d'une infrastructure virtualisée complète avec gestion centralisée des utilisateurs, pare-feu et segmentation VLAN.",
+            link: "projects/network-infrastructure.html",
+          },
+          {
+            title: "Serveur de Virtualisation",
+            tech: ["Proxmox", "VirtualBox", "Debian"],
+            desc: "Hyperviseur Proxmox hébergeant plusieurs VMs avec snapshots automatisés et gestion fine des ressources.",
+            link: "projects/proxmox-server.html",
+          },
+          {
+            title: "Déploiement Ansible",
+            tech: ["Ansible", "Linux", "YAML"],
+            desc: "Automatisation du déploiement de serveurs Linux via des playbooks Ansible pour réduire les erreurs de configuration.",
+            link: "projects/ansible-deployment.html",
+          },
+          {
+            title: "Audit Sécurité Réseau",
+            tech: ["Nmap", "Wireshark", "pfSense"],
+            desc: "Évaluation des vulnérabilités d'une infrastructure réseau, identification des menaces et mise en place de contre-mesures.",
+            link: "projects/network-audit.html",
+          },
+          {
+            title: "Déploiement Ansible",
+            tech: ["Ansible", "Linux", "YAML"],
+            desc: "Automatisation du déploiement de serveurs Linux via des playbooks Ansible pour réduire les erreurs de configuration.",
+            link: "projects/ansible-advanced.html",
+          },
+          {
+            title: "Documentation Technique",
+            tech: ["Markdown", "GitHub Pages", "Documentation"],
+            desc: "Documentação complète d'un projet avec architecture, procédures et guides d'utilisation sur plateau sportludique.",
+            link: "https://xola-max.github.io/gp-orleans-sportludique2025-2026/",
+          },
+        ],
+        qualities: [
+          "Esprit d'équipe",
+          "Polyvalent",
+          "Souriant",
+          "Ponctuel",
+          "Curieux",
+          "Rigoureux",
+        ],
+        languages: [
+          { lang: "Français", level: "Natif", pct: 100 },
+          { lang: "Anglais", level: "B1", pct: 50 },
+        ],
+        interests: ["💻 Technologie", "🎬 Cinéma", "⚽ Sport"],
+      };
+    </script>
 
-  <style>
-  /* ================================================================
+    <style>
+      /* ================================================================
      VARIABLES
   ================================================================ */
-  :root {
-    --cream:        #f5f0e8;
-    --warm-white:   #faf8f4;
-    --brown-dark:   #5c3d2e;
-    --brown-mid:    #8b6355;
-    --brown-light:  #c4a882;
-    --brown-pale:   #e8d9c8;
-    --text-main:    #2c1f14;
-    --text-muted:   #7a6255;
-    --border:       rgba(139,99,85,.15);
-    --shadow-sm:    0 2px 12px rgba(44,31,20,.07);
-    --shadow-md:    0 8px 32px  rgba(44,31,20,.11);
-    --shadow-lg:    0 20px 60px rgba(44,31,20,.16);
-    --panel-shadow: 12px 0 48px rgba(0,0,0,.30);
-    --font-serif:   'Cormorant Garamond', Georgia, serif;
-    --font-sans:    'DM Sans', system-ui, sans-serif;
-    --radius-md:    1rem;
-    --radius-lg:    1.75rem;
-    --panel-ratio:  55vw;
-    --drag-threshold: 0.40;
-    --open-duration:  720;
-    --open-easing:    cubic-bezier(0.76, 0, 0.24, 1);
-  }
-  @media (max-width: 768px) {
-    :root { --panel-ratio: 100vw; }
-  }
+      :root {
+        --cream: #f5f0e8;
+        --warm-white: #faf8f4;
+        --brown-dark: #5c3d2e;
+        --brown-mid: #8b6355;
+        --brown-light: #c4a882;
+        --brown-pale: #e8d9c8;
+        --text-main: #2c1f14;
+        --text-muted: #7a6255;
+        --border: rgba(139, 99, 85, 0.15);
+        --shadow-sm: 0 2px 12px rgba(44, 31, 20, 0.07);
+        --shadow-md: 0 8px 32px rgba(44, 31, 20, 0.11);
+        --shadow-lg: 0 20px 60px rgba(44, 31, 20, 0.16);
+        --panel-shadow: 12px 0 48px rgba(0, 0, 0, 0.3);
+        --font-serif: "Cormorant Garamond", Georgia, serif;
+        --font-sans: "DM Sans", system-ui, sans-serif;
+        --radius-md: 1rem;
+        --radius-lg: 1.75rem;
+        --panel-ratio: 55vw;
+        --drag-threshold: 0.4;
+        --open-duration: 720;
+        --open-easing: cubic-bezier(0.76, 0, 0.24, 1);
+      }
+      @media (max-width: 768px) {
+        :root {
+          --panel-ratio: 100vw;
+        }
+      }
 
-  /* ================================================================
+      /* ================================================================
      BASE
   ================================================================ */
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { font-size: 16px; scroll-behavior: smooth; }
-  html.locked { overflow: hidden; }
-  body { font-family: var(--font-sans); background: var(--warm-white); color: var(--text-main); line-height: 1.65; overflow-x: hidden; }
-  ::-webkit-scrollbar       { width: 5px; }
-  ::-webkit-scrollbar-track { background: var(--cream); }
-  ::-webkit-scrollbar-thumb { background: var(--brown-light); border-radius: 99px; }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        font-size: 16px;
+        scroll-behavior: smooth;
+      }
+      html.locked {
+        overflow: hidden;
+      }
+      body {
+        font-family: var(--font-sans);
+        background: var(--warm-white);
+        color: var(--text-main);
+        line-height: 1.65;
+        overflow-x: hidden;
+      }
+      ::-webkit-scrollbar {
+        width: 5px;
+      }
+      ::-webkit-scrollbar-track {
+        background: var(--cream);
+      }
+      ::-webkit-scrollbar-thumb {
+        background: var(--brown-light);
+        border-radius: 99px;
+      }
 
-  .btn {
-    display: inline-flex; align-items: center; gap: .45rem;
-    padding: .72rem 1.5rem; border-radius: 999px;
-    font-family: var(--font-sans); font-size: .875rem; font-weight: 500;
-    cursor: pointer; text-decoration: none; border: none; white-space: nowrap;
-    transition: transform .2s ease, box-shadow .2s ease;
-  }
-  .btn:hover { transform: translateY(-2px); }
-  .btn-primary { background: var(--brown-light); color: #fff; box-shadow: 0 4px 16px rgba(196,168,130,.35); }
-  .btn-primary:hover { box-shadow: 0 8px 24px rgba(196,168,130,.45); }
-  .btn-outline { background: transparent; color: rgba(245,240,232,.85); border: 1.5px solid rgba(245,240,232,.30); }
-  .btn-outline:hover { background: rgba(245,240,232,.08); }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        padding: 0.72rem 1.5rem;
+        border-radius: 999px;
+        font-family: var(--font-sans);
+        font-size: 0.875rem;
+        font-weight: 500;
+        cursor: pointer;
+        text-decoration: none;
+        border: none;
+        white-space: nowrap;
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
+      }
+      .btn:hover {
+        transform: translateY(-2px);
+      }
+      .btn-primary {
+        background: var(--brown-light);
+        color: #fff;
+        box-shadow: 0 4px 16px rgba(196, 168, 130, 0.35);
+      }
+      .btn-primary:hover {
+        box-shadow: 0 8px 24px rgba(196, 168, 130, 0.45);
+      }
+      .btn-outline {
+        background: transparent;
+        color: rgba(245, 240, 232, 0.85);
+        border: 1.5px solid rgba(245, 240, 232, 0.3);
+      }
+      .btn-outline:hover {
+        background: rgba(245, 240, 232, 0.08);
+      }
 
-  /* ================================================================
+      /* ================================================================
      INTRO
   ================================================================ */
-  #intro {
-    position: fixed; inset: 0; z-index: 900;
-    display: grid; grid-template-columns: var(--panel-ratio) 1fr;
-    overflow: hidden; pointer-events: all;
-  }
-  #intro.is-gone { pointer-events: none; visibility: hidden; }
+      #intro {
+        position: fixed;
+        inset: 0;
+        z-index: 900;
+        display: grid;
+        grid-template-columns: var(--panel-ratio) 1fr;
+        overflow: hidden;
+        pointer-events: all;
+      }
+      #intro.is-gone {
+        pointer-events: none;
+        visibility: hidden;
+      }
 
-  #intro-panel {
-    position: relative; background: var(--brown-dark);
-    display: flex; flex-direction: column; justify-content: center;
-    padding: 4.5rem 4rem 4.5rem 5rem;
-    will-change: transform; cursor: grab; user-select: none;
-    box-shadow: var(--panel-shadow); overflow: hidden;
-  }
-  #intro-panel:active  { cursor: grabbing; }
+      #intro-panel {
+        position: relative;
+        background: var(--brown-dark);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 4.5rem 4rem 4.5rem 5rem;
+        will-change: transform;
+        cursor: grab;
+        user-select: none;
+        box-shadow: var(--panel-shadow);
+        overflow: hidden;
+      }
+      #intro-panel:active {
+        cursor: grabbing;
+      }
 
-  /* Décors fond panneau */
-  .deco-circle-top {
-    position: absolute; top: -80px; right: -60px;
-    width: 280px; height: 280px; border-radius: 50%;
-    background: rgba(255,255,255,.025); pointer-events: none;
-  }
-  .deco-circle-bot {
-    position: absolute; bottom: -70px; left: -50px;
-    width: 240px; height: 240px; border-radius: 50%;
-    background: rgba(255,255,255,.02); pointer-events: none;
-  }
-  .deco-arch {
-    position: absolute; right: -44px; top: 50%; transform: translateY(-50%);
-    width: 88px; height: 55%; background: var(--brown-dark);
-    border-radius: 0 999px 999px 0; pointer-events: none; z-index: 2;
-  }
+      /* Décors fond panneau */
+      .deco-circle-top {
+        position: absolute;
+        top: -80px;
+        right: -60px;
+        width: 280px;
+        height: 280px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.025);
+        pointer-events: none;
+      }
+      .deco-circle-bot {
+        position: absolute;
+        bottom: -70px;
+        left: -50px;
+        width: 240px;
+        height: 240px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.02);
+        pointer-events: none;
+      }
+      .deco-arch {
+        position: absolute;
+        right: -44px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 88px;
+        height: 55%;
+        background: var(--brown-dark);
+        border-radius: 0 999px 999px 0;
+        pointer-events: none;
+        z-index: 2;
+      }
 
-  /* Texte panneau */
-  .panel-eyebrow { font-size: .68rem; letter-spacing: .22em; text-transform: uppercase; color: var(--brown-light); margin-bottom: 1.1rem; opacity: .9; }
-  .panel-name { font-family: var(--font-serif); font-size: clamp(2.8rem, 4.5vw, 4.4rem); font-weight: 300; color: var(--cream); line-height: 1.05; }
-  .panel-name strong { font-weight: 600; display: block; }
-  .panel-tagline { margin-top: 1.1rem; font-size: .95rem; font-weight: 300; color: var(--brown-pale); letter-spacing: .04em; }
-  .panel-divider { width: 44px; height: 2px; background: var(--brown-light); margin: 1.8rem 0; border-radius: 2px; opacity: .75; }
-  .panel-about { font-size: .9rem; line-height: 1.78; color: rgba(232,217,200,.82); max-width: 380px; font-weight: 300; }
-  .panel-cta { display: flex; gap: .85rem; margin-top: 2.4rem; flex-wrap: wrap; }
+      /* Texte panneau */
+      .panel-eyebrow {
+        font-size: 0.68rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--brown-light);
+        margin-bottom: 1.1rem;
+        opacity: 0.9;
+      }
+      .panel-name {
+        font-family: var(--font-serif);
+        font-size: clamp(2.8rem, 4.5vw, 4.4rem);
+        font-weight: 300;
+        color: var(--cream);
+        line-height: 1.05;
+      }
+      .panel-name strong {
+        font-weight: 600;
+        display: block;
+      }
+      .panel-tagline {
+        margin-top: 1.1rem;
+        font-size: 0.95rem;
+        font-weight: 300;
+        color: var(--brown-pale);
+        letter-spacing: 0.04em;
+      }
+      .panel-divider {
+        width: 44px;
+        height: 2px;
+        background: var(--brown-light);
+        margin: 1.8rem 0;
+        border-radius: 2px;
+        opacity: 0.75;
+      }
+      .panel-about {
+        font-size: 0.9rem;
+        line-height: 1.78;
+        color: rgba(232, 217, 200, 0.82);
+        max-width: 380px;
+        font-weight: 300;
+      }
+      .panel-cta {
+        display: flex;
+        gap: 0.85rem;
+        margin-top: 2.4rem;
+        flex-wrap: wrap;
+      }
 
-  /* Zone droite crème */
-  #intro-right { background: var(--cream); display: flex; align-items: center; padding: 0 4rem; transition: opacity 400ms ease 200ms; }
-  #intro.is-opening #intro-right { opacity: 0; }
+      /* Zone droite crème */
+      #intro-right {
+        background: var(--cream);
+        display: flex;
+        align-items: center;
+        padding: 0 4rem;
+        transition: opacity 400ms ease 200ms;
+      }
+      #intro.is-opening #intro-right {
+        opacity: 0;
+      }
 
-  .intro-info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .9rem; width: 100%; max-width: 580px; }
-  .intro-info-card {
-    background: #fff; border: 1px solid var(--border); border-radius: var(--radius-lg);
-    padding: 1.25rem 1.4rem; box-shadow: var(--shadow-sm);
-    transition: transform .2s ease, box-shadow .2s ease;
-  }
-  .intro-info-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
-  .intro-info-card a { cursor: pointer; }
-  .intro-info-card.clickable { cursor: pointer; }
-  .intro-info-label { font-size: .65rem; letter-spacing: .15em; text-transform: uppercase; color: var(--brown-light); margin-bottom: .35rem; font-weight: 500; }
-  .intro-info-value { font-size: .9rem; font-weight: 500; color: var(--text-main); }
-  .intro-social { grid-column: 1 / -1; display: flex; gap: .65rem; margin-top: .2rem; }
-  .intro-social-link {
-    display: inline-flex; align-items: center; gap: .4rem; padding: .55rem 1.15rem;
-    border-radius: 999px; background: #fff; border: 1px solid var(--border);
-    font-size: .82rem; font-weight: 500; color: var(--text-main); text-decoration: none;
-    box-shadow: var(--shadow-sm); transition: background .2s, transform .2s;
-  }
-  .intro-social-link:hover { background: var(--brown-pale); transform: translateY(-2px); }
+      .intro-info-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.9rem;
+        width: 100%;
+        max-width: 580px;
+      }
+      .intro-info-card {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: 1.25rem 1.4rem;
+        box-shadow: var(--shadow-sm);
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
+      }
+      .intro-info-card:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-md);
+      }
+      .intro-info-card a {
+        cursor: pointer;
+      }
+      .intro-info-card.clickable {
+        cursor: pointer;
+      }
+      .intro-info-label {
+        font-size: 0.65rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--brown-light);
+        margin-bottom: 0.35rem;
+        font-weight: 500;
+      }
+      .intro-info-value {
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: var(--text-main);
+      }
+      .intro-social {
+        grid-column: 1 / -1;
+        display: flex;
+        gap: 0.65rem;
+        margin-top: 0.2rem;
+      }
+      .intro-social-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        padding: 0.55rem 1.15rem;
+        border-radius: 999px;
+        background: #fff;
+        border: 1px solid var(--border);
+        font-size: 0.82rem;
+        font-weight: 500;
+        color: var(--text-main);
+        text-decoration: none;
+        box-shadow: var(--shadow-sm);
+        transition:
+          background 0.2s,
+          transform 0.2s;
+      }
+      .intro-social-link:hover {
+        background: var(--brown-pale);
+        transform: translateY(-2px);
+      }
 
-  /* Poignée drag */
-  #drag-handle {
-    position: absolute; right: -18px; top: 50%; transform: translateY(-50%); z-index: 10;
-    width: 36px; height: 72px; border-radius: 0 99px 99px 0;
-    background: var(--brown-mid); box-shadow: 4px 0 16px rgba(0,0,0,.20);
-    display: flex; align-items: center; justify-content: center; cursor: grab;
-    transition: background .2s, width .15s ease;
-  }
-  #intro-panel:hover #drag-handle { background: var(--brown-light); width: 42px; }
-  #drag-handle svg {
-    width: 16px; height: 16px; fill: none;
-    stroke: rgba(255,255,255,.85); stroke-width: 2.2;
-    stroke-linecap: round; stroke-linejoin: round;
-    animation: nudge 1.8s ease-in-out infinite;
-  }
-  @keyframes nudge {
-    0%, 100% { transform: translateX(0);   opacity: .85; }
-    50%       { transform: translateX(3px); opacity: 1;   }
-  }
+      /* Poignée drag */
+      #drag-handle {
+        position: absolute;
+        right: -18px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+        width: 36px;
+        height: 72px;
+        border-radius: 0 99px 99px 0;
+        background: var(--brown-mid);
+        box-shadow: 4px 0 16px rgba(0, 0, 0, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: grab;
+        transition:
+          background 0.2s,
+          width 0.15s ease;
+      }
+      #intro-panel:hover #drag-handle {
+        background: var(--brown-light);
+        width: 42px;
+      }
+      #drag-handle svg {
+        width: 16px;
+        height: 16px;
+        fill: none;
+        stroke: rgba(255, 255, 255, 0.85);
+        stroke-width: 2.2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        animation: nudge 1.8s ease-in-out infinite;
+      }
+      @keyframes nudge {
+        0%,
+        100% {
+          transform: translateX(0);
+          opacity: 0.85;
+        }
+        50% {
+          transform: translateX(3px);
+          opacity: 1;
+        }
+      }
 
-  #drag-hint {
-    position: absolute; bottom: 2.2rem; right: 2.5rem;
-    font-size: .68rem; letter-spacing: .14em; text-transform: uppercase;
-    color: rgba(196,168,130,.55); display: flex; align-items: center; gap: .4rem;
-    animation: fadeHint 2.5s ease-in-out infinite; pointer-events: none;
-  }
-  @keyframes fadeHint { 0%, 100% { opacity: .55; } 50% { opacity: .9; } }
+      #drag-hint {
+        position: absolute;
+        bottom: 2.2rem;
+        right: 2.5rem;
+        font-size: 0.68rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: rgba(196, 168, 130, 0.55);
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        animation: fadeHint 2.5s ease-in-out infinite;
+        pointer-events: none;
+      }
+      @keyframes fadeHint {
+        0%,
+        100% {
+          opacity: 0.55;
+        }
+        50% {
+          opacity: 0.9;
+        }
+      }
 
-  #drag-progress {
-    position: absolute; bottom: 0; left: 0; height: 3px; width: 0%;
-    background: linear-gradient(90deg, var(--brown-light), var(--brown-pale));
-    border-radius: 2px; pointer-events: none;
-  }
+      #drag-progress {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 3px;
+        width: 0%;
+        background: linear-gradient(
+          90deg,
+          var(--brown-light),
+          var(--brown-pale)
+        );
+        border-radius: 2px;
+        pointer-events: none;
+      }
 
-  /* États drag */
-  #intro-panel.is-dragging { transition: none !important; }
-  #intro-panel.past-threshold #drag-handle { background: var(--brown-pale); }
-  #intro-panel.past-threshold #drag-handle svg { stroke: var(--brown-dark); }
-  #intro-panel.is-opening {
-    transition: transform 720ms cubic-bezier(0.76, 0, 0.24, 1) !important;
-    transform: translateX(-110%) !important;
-  }
+      /* États drag */
+      #intro-panel.is-dragging {
+        transition: none !important;
+      }
+      #intro-panel.past-threshold #drag-handle {
+        background: var(--brown-pale);
+      }
+      #intro-panel.past-threshold #drag-handle svg {
+        stroke: var(--brown-dark);
+      }
+      #intro-panel.is-opening {
+        transition: transform 720ms cubic-bezier(0.76, 0, 0.24, 1) !important;
+        transform: translateX(-110%) !important;
+      }
 
-  /* Flash */
-  #open-flash { position: fixed; inset: 0; z-index: 800; background: var(--cream); opacity: 0; pointer-events: none; transition: opacity 60ms ease; }
-  #open-flash.flash-in  { opacity: .5; }
-  #open-flash.flash-out { opacity: 0; transition: opacity 500ms ease; }
+      /* Flash */
+      #open-flash {
+        position: fixed;
+        inset: 0;
+        z-index: 800;
+        background: var(--cream);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 60ms ease;
+      }
+      #open-flash.flash-in {
+        opacity: 0.5;
+      }
+      #open-flash.flash-out {
+        opacity: 0;
+        transition: opacity 500ms ease;
+      }
 
-  /* Mobile intro */
-  @media (max-width: 768px) {
-    #intro { grid-template-columns: 1fr; }
-    #intro-panel { padding: 5rem 2rem 3rem; }
-    #intro-right { display: none; }
-    #drag-hint { bottom: 3rem; right: 50%; transform: translateX(50%); }
-    .panel-cta { flex-direction: column; }
-    .btn { justify-content: center; }
-  }
+      /* Mobile intro */
+      @media (max-width: 768px) {
+        #intro {
+          grid-template-columns: 1fr;
+        }
+        #intro-panel {
+          padding: 5rem 2rem 3rem;
+        }
+        #intro-right {
+          display: none;
+        }
+        #drag-hint {
+          bottom: 3rem;
+          right: 50%;
+          transform: translateX(50%);
+        }
+        .panel-cta {
+          flex-direction: column;
+        }
+        .btn {
+          justify-content: center;
+        }
+      }
 
-  /* ================================================================
+      /* ================================================================
      PORTFOLIO CONTENT
   ================================================================ */
-  #portfolio {
-    opacity: 0; transform: translateY(18px); pointer-events: none;
-    transition: opacity 600ms ease 200ms, transform 600ms ease 200ms;
-  }
-  #portfolio.is-revealed { opacity: 1; transform: none; pointer-events: all; }
+      #portfolio {
+        opacity: 0;
+        transform: translateY(18px);
+        pointer-events: none;
+        transition:
+          opacity 600ms ease 200ms,
+          transform 600ms ease 200ms;
+      }
+      #portfolio.is-revealed {
+        opacity: 1;
+        transform: none;
+        pointer-events: all;
+      }
 
-  /* Nav */
-  #navbar {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 500;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 1rem 4rem; background: rgba(250,248,244,.92);
-    backdrop-filter: blur(14px); border-bottom: 1px solid var(--border);
-    transform: translateY(-100%); transition: transform .4s cubic-bezier(.4,0,.2,1);
-  }
-  #navbar.nav-visible { transform: none; }
-  .nav-logo { font-family: var(--font-serif); font-size: 1.05rem; font-weight: 600; color: var(--brown-dark); text-decoration: none; }
-  .nav-links { display: flex; gap: 2.2rem; list-style: none; }
-  .nav-links a { font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; color: var(--text-muted); text-decoration: none; transition: color .2s; }
-  .nav-links a:hover { color: var(--brown-dark); }
-  @media (max-width: 768px) { #navbar { padding: 1rem 1.5rem; } .nav-links { display: none; } }
+      /* Nav */
+      #navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 500;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 4rem;
+        background: rgba(250, 248, 244, 0.92);
+        backdrop-filter: blur(14px);
+        border-bottom: 1px solid var(--border);
+        transform: translateY(-100%);
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      #navbar.nav-visible {
+        transform: none;
+      }
+      .nav-logo {
+        font-family: var(--font-serif);
+        font-size: 1.05rem;
+        font-weight: 600;
+        color: var(--brown-dark);
+        text-decoration: none;
+      }
+      .nav-links {
+        display: flex;
+        gap: 2.2rem;
+        list-style: none;
+      }
+      .nav-links a {
+        font-size: 0.78rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--text-muted);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+      .nav-links a:hover {
+        color: var(--brown-dark);
+      }
+      @media (max-width: 768px) {
+        #navbar {
+          padding: 1rem 1.5rem;
+        }
+        .nav-links {
+          display: none;
+        }
+      }
 
-  /* Section layout */
-  .section-wrap { max-width: 1280px; margin: 0 auto; padding: 7rem 5rem; }
-  @media (max-width: 900px) { .section-wrap { padding: 5rem 1.8rem; } }
+      /* Section layout */
+      .section-wrap {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 7rem 5rem;
+      }
+      @media (max-width: 900px) {
+        .section-wrap {
+          padding: 5rem 1.8rem;
+        }
+      }
 
-  .section-header { display: flex; align-items: center; gap: 1.5rem; margin-bottom: 3.5rem; }
-  .section-tag { font-size: .65rem; letter-spacing: .2em; text-transform: uppercase; color: var(--brown-light); writing-mode: vertical-rl; transform: rotate(180deg); flex-shrink: 0; }
-  .section-title { font-family: var(--font-serif); font-size: clamp(1.9rem, 3.2vw, 2.9rem); font-weight: 300; color: var(--text-main); line-height: 1.1; }
-  .section-title em { font-style: italic; color: var(--brown-mid); }
-  .section-line { flex: 1; height: 1px; background: var(--border); }
+      .section-header {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        margin-bottom: 3.5rem;
+      }
+      .section-tag {
+        font-size: 0.65rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--brown-light);
+        writing-mode: vertical-rl;
+        transform: rotate(180deg);
+        flex-shrink: 0;
+      }
+      .section-title {
+        font-family: var(--font-serif);
+        font-size: clamp(1.9rem, 3.2vw, 2.9rem);
+        font-weight: 300;
+        color: var(--text-main);
+        line-height: 1.1;
+      }
+      .section-title em {
+        font-style: italic;
+        color: var(--brown-mid);
+      }
+      .section-line {
+        flex: 1;
+        height: 1px;
+        background: var(--border);
+      }
 
-  /* Skills */
-  #skills { background: var(--cream); }
-  .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 1.1rem; }
-  .skill-card {
-    background: #fff; border: 1px solid var(--border); border-radius: var(--radius-lg);
-    padding: 1.7rem 1.5rem; position: relative; overflow: hidden;
-    transition: transform .25s ease, box-shadow .25s ease;
-  }
-  .skill-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--brown-light), transparent); }
-  .skill-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
-  .skill-icon { font-size: 1.5rem; margin-bottom: .7rem; }
-  .skill-cat  { font-size: .7rem; letter-spacing: .13em; text-transform: uppercase; color: var(--brown-light); margin-bottom: .8rem; font-weight: 500; }
-  .skill-items { list-style: none; }
-  .skill-items li { font-size: .86rem; color: var(--text-muted); padding: .28rem 0; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: .45rem; }
-  .skill-items li:last-child { border: none; }
-  .skill-items li::before { content: '▸'; color: var(--brown-light); font-size: .65rem; flex-shrink: 0; }
+      /* Skills */
+      #skills {
+        background: var(--cream);
+      }
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+        gap: 1.1rem;
+      }
+      .skill-card {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: 1.7rem 1.5rem;
+        position: relative;
+        overflow: hidden;
+        transition:
+          transform 0.25s ease,
+          box-shadow 0.25s ease;
+      }
+      .skill-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, var(--brown-light), transparent);
+      }
+      .skill-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-md);
+      }
+      .skill-icon {
+        font-size: 1.5rem;
+        margin-bottom: 0.7rem;
+      }
+      .skill-cat {
+        font-size: 0.7rem;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+        color: var(--brown-light);
+        margin-bottom: 0.8rem;
+        font-weight: 500;
+      }
+      .skill-items {
+        list-style: none;
+      }
+      .skill-items li {
+        font-size: 0.86rem;
+        color: var(--text-muted);
+        padding: 0.28rem 0;
+        border-bottom: 1px solid var(--border);
+        display: flex;
+        align-items: center;
+        gap: 0.45rem;
+      }
+      .skill-items li:last-child {
+        border: none;
+      }
+      .skill-items li::before {
+        content: "▸";
+        color: var(--brown-light);
+        font-size: 0.65rem;
+        flex-shrink: 0;
+      }
 
-  /* Timeline */
-  .timeline { position: relative; padding-left: 2rem; max-width: 680px; }
-  .timeline::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, var(--brown-light) 0%, transparent 100%); }
-  .timeline-item {
-    position: relative; padding-left: 2.2rem; margin-bottom: 2.8rem;
-    opacity: 0; transform: translateX(-16px);
-    transition: opacity .55s ease, transform .55s ease;
-  }
-  .timeline-item.in-view { opacity: 1; transform: none; }
-  .timeline-item::before {
-    content: ''; position: absolute; left: -2.35rem; top: .3rem;
-    width: 10px; height: 10px; border-radius: 50%;
-    background: var(--brown-light); border: 2px solid var(--cream);
-    box-shadow: 0 0 0 3px var(--brown-pale);
-  }
-  .timeline-period { font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--brown-light); margin-bottom: .35rem; }
-  .timeline-title  { font-family: var(--font-serif); font-size: 1.25rem; font-weight: 600; color: var(--text-main); margin-bottom: .15rem; }
-  .timeline-sub    { font-size: .84rem; color: var(--text-muted); font-style: italic; margin-bottom: .2rem; }
-  .timeline-school { font-size: .82rem; color: var(--brown-mid); font-weight: 500; }
-  .timeline-tasks  { list-style: none; margin-top: .75rem; }
-  .timeline-tasks li { font-size: .87rem; color: var(--text-muted); padding: .22rem 0; display: flex; gap: .5rem; }
-  .timeline-tasks li::before { content: '—'; color: var(--brown-light); flex-shrink: 0; }
+      /* Timeline */
+      .timeline {
+        position: relative;
+        padding-left: 2rem;
+        max-width: 680px;
+      }
+      .timeline::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: linear-gradient(
+          180deg,
+          var(--brown-light) 0%,
+          transparent 100%
+        );
+      }
+      .timeline-item {
+        position: relative;
+        padding-left: 2.2rem;
+        margin-bottom: 2.8rem;
+        opacity: 0;
+        transform: translateX(-16px);
+        transition:
+          opacity 0.55s ease,
+          transform 0.55s ease;
+      }
+      .timeline-item.in-view {
+        opacity: 1;
+        transform: none;
+      }
+      .timeline-item::before {
+        content: "";
+        position: absolute;
+        left: -2.35rem;
+        top: 0.3rem;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: var(--brown-light);
+        border: 2px solid var(--cream);
+        box-shadow: 0 0 0 3px var(--brown-pale);
+      }
+      .timeline-period {
+        font-size: 0.72rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--brown-light);
+        margin-bottom: 0.35rem;
+      }
+      .timeline-title {
+        font-family: var(--font-serif);
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: var(--text-main);
+        margin-bottom: 0.15rem;
+      }
+      .timeline-sub {
+        font-size: 0.84rem;
+        color: var(--text-muted);
+        font-style: italic;
+        margin-bottom: 0.2rem;
+      }
+      .timeline-school {
+        font-size: 0.82rem;
+        color: var(--brown-mid);
+        font-weight: 500;
+      }
+      .timeline-tasks {
+        list-style: none;
+        margin-top: 0.75rem;
+      }
+      .timeline-tasks li {
+        font-size: 0.87rem;
+        color: var(--text-muted);
+        padding: 0.22rem 0;
+        display: flex;
+        gap: 0.5rem;
+      }
+      .timeline-tasks li::before {
+        content: "—";
+        color: var(--brown-light);
+        flex-shrink: 0;
+      }
 
-  /* Projects */
-  #projects { background: var(--cream); }
-  .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 1.4rem; }
-  .project-card {
-    background: #fff; border: 1px solid var(--border); border-radius: var(--radius-lg);
-    padding: 2rem; display: flex; flex-direction: column; gap: .9rem;
-    position: relative; overflow: hidden;
-    opacity: 0; transform: translateY(20px);
-    transition: opacity .5s ease, transform .5s ease, box-shadow .25s ease;
-  }
-  .project-card.in-view { opacity: 1; transform: none; }
-  .project-card:hover   { transform: translateY(-5px) !important; box-shadow: var(--shadow-md); }
-  .project-card::after  { content: ''; position: absolute; bottom: 0; right: 0; width: 70px; height: 70px; background: var(--brown-pale); border-radius: 999px 0 0 0; opacity: .35; pointer-events: none; }
-  .project-title { font-family: var(--font-serif); font-size: 1.25rem; font-weight: 600; color: var(--text-main); }
-  .project-desc  { font-size: .87rem; line-height: 1.72; color: var(--text-muted); flex: 1; }
-  .tag-row  { display: flex; flex-wrap: wrap; gap: .4rem; }
-  .tag { font-size: .7rem; padding: .22rem .65rem; border-radius: 999px; background: var(--brown-pale); color: var(--brown-dark); font-weight: 500; }
-  .project-link { display: inline-flex; align-items: center; gap: .35rem; font-size: .82rem; font-weight: 500; color: var(--brown-mid); text-decoration: none; transition: color .2s; }
-  .project-link:hover { color: var(--brown-dark); }
+      /* Projects */
+      #projects {
+        background: var(--cream);
+      }
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+        gap: 1.4rem;
+      }
+      .project-card {
+        background: #fff;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.9rem;
+        position: relative;
+        overflow: hidden;
+        opacity: 0;
+        transform: translateY(20px);
+        transition:
+          opacity 0.5s ease,
+          transform 0.5s ease,
+          box-shadow 0.25s ease;
+      }
+      .project-card.in-view {
+        opacity: 1;
+        transform: none;
+      }
+      .project-card {
+        cursor: pointer;
+      }
+      .project-card:hover {
+        transform: translateY(-5px) !important;
+        box-shadow: var(--shadow-md);
+      }
+      .project-card::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 70px;
+        height: 70px;
+        background: var(--brown-pale);
+        border-radius: 999px 0 0 0;
+        opacity: 0.35;
+        pointer-events: none;
+      }
+      .project-title {
+        font-family: var(--font-serif);
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: var(--text-main);
+      }
+      .project-desc {
+        font-size: 0.87rem;
+        line-height: 1.72;
+        color: var(--text-muted);
+        flex: 1;
+      }
+      .tag-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+      }
+      .tag {
+        font-size: 0.7rem;
+        padding: 0.22rem 0.65rem;
+        border-radius: 999px;
+        background: var(--brown-pale);
+        color: var(--brown-dark);
+        font-weight: 500;
+      }
+      .project-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        font-size: 0.82rem;
+        font-weight: 500;
+        color: var(--brown-mid);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+      .project-link:hover {
+        color: var(--brown-dark);
+      }
 
-  /* About strip */
-  #about-strip { background: var(--brown-dark); padding: 5rem 0; }
-  .about-inner { max-width: 1280px; margin: 0 auto; padding: 0 5rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; }
-  @media (max-width: 900px) { .about-inner { grid-template-columns: 1fr; padding: 0 1.8rem; gap: 2.2rem; } }
-  .about-block-title { font-family: var(--font-serif); font-size: .85rem; font-weight: 600; color: var(--brown-light); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 1.2rem; }
-  .quality-list  { display: flex; flex-wrap: wrap; gap: .5rem; }
-  .quality-chip  { padding: .38rem .9rem; border-radius: 999px; border: 1px solid rgba(196,168,130,.3); font-size: .82rem; color: var(--brown-pale); }
-  .lang-item     { margin-bottom: 1.1rem; }
-  .lang-name     { display: flex; justify-content: space-between; font-size: .87rem; color: var(--brown-pale); margin-bottom: .4rem; }
-  .lang-bar      { height: 4px; background: rgba(255,255,255,.1); border-radius: 99px; overflow: hidden; }
-  .lang-fill     { height: 100%; background: linear-gradient(90deg, var(--brown-light), var(--brown-pale)); border-radius: 99px; width: 0; transition: width 1.2s cubic-bezier(.4,0,.2,1); }
-  .interest-list { display: flex; flex-wrap: wrap; gap: .55rem; }
-  .interest-chip { padding: .42rem 1rem; border-radius: 999px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); font-size: .84rem; color: var(--brown-pale); }
+      /* About strip */
+      #about-strip {
+        background: var(--brown-dark);
+        padding: 5rem 0;
+      }
+      .about-inner {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 5rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 3rem;
+      }
+      @media (max-width: 900px) {
+        .about-inner {
+          grid-template-columns: 1fr;
+          padding: 0 1.8rem;
+          gap: 2.2rem;
+        }
+      }
+      .about-block-title {
+        font-family: var(--font-serif);
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: var(--brown-light);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        margin-bottom: 1.2rem;
+      }
+      .quality-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+      .quality-chip {
+        padding: 0.38rem 0.9rem;
+        border-radius: 999px;
+        border: 1px solid rgba(196, 168, 130, 0.3);
+        font-size: 0.82rem;
+        color: var(--brown-pale);
+      }
+      .lang-item {
+        margin-bottom: 1.1rem;
+      }
+      .lang-name {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.87rem;
+        color: var(--brown-pale);
+        margin-bottom: 0.4rem;
+      }
+      .lang-bar {
+        height: 4px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 99px;
+        overflow: hidden;
+      }
+      .lang-fill {
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          var(--brown-light),
+          var(--brown-pale)
+        );
+        border-radius: 99px;
+        width: 0;
+        transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .interest-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.55rem;
+      }
+      .interest-chip {
+        padding: 0.42rem 1rem;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        font-size: 0.84rem;
+        color: var(--brown-pale);
+      }
 
-  /* Contact */
-  #contact { text-align: center; }
-  .contact-inner { max-width: 660px; margin: 0 auto; }
-  .contact-title { font-family: var(--font-serif); font-size: clamp(2.3rem, 4vw, 3.5rem); font-weight: 300; color: var(--text-main); margin-bottom: .9rem; }
-  .contact-title em { color: var(--brown-mid); font-style: italic; }
-  .contact-sub { font-size: .95rem; color: var(--text-muted); margin-bottom: 2.2rem; line-height: 1.7; }
-  .contact-links { display: flex; justify-content: center; flex-wrap: wrap; gap: .9rem; }
-  .contact-links .btn-primary { background: var(--brown-dark); }
+      /* Contact */
+      #contact {
+        text-align: center;
+      }
+      .contact-inner {
+        max-width: 660px;
+        margin: 0 auto;
+      }
+      .contact-title {
+        font-family: var(--font-serif);
+        font-size: clamp(2.3rem, 4vw, 3.5rem);
+        font-weight: 300;
+        color: var(--text-main);
+        margin-bottom: 0.9rem;
+      }
+      .contact-title em {
+        color: var(--brown-mid);
+        font-style: italic;
+      }
+      .contact-sub {
+        font-size: 0.95rem;
+        color: var(--text-muted);
+        margin-bottom: 2.2rem;
+        line-height: 1.7;
+      }
+      .contact-links {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.9rem;
+      }
+      .contact-links .btn-primary {
+        background: var(--brown-dark);
+      }
 
-  footer { text-align: center; padding: 1.8rem; font-size: .76rem; color: var(--text-muted); border-top: 1px solid var(--border); }
-  </style>
-</head>
-<body>
+      footer {
+        text-align: center;
+        padding: 1.8rem;
+        font-size: 0.76rem;
+        color: var(--text-muted);
+        border-top: 1px solid var(--border);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ══════════════════ INTRO ══════════════════ -->
+    <div id="intro">
+      <div id="intro-panel">
+        <div class="deco-circle-top"></div>
+        <div class="deco-circle-bot"></div>
+        <div class="deco-arch"></div>
 
-  <!-- ══════════════════ INTRO ══════════════════ -->
-  <div id="intro">
+        <p class="panel-eyebrow">
+          — Portfolio · Technicien Systèmes &amp; Réseaux
+        </p>
+        <h1 class="panel-name">Louis<strong>BERTRAND</strong></h1>
+        <p class="panel-tagline">BTS SIO • Infrastructure • Cybersécurité</p>
+        <div class="panel-divider"></div>
+        <p class="panel-about">
+          Passionné par les systèmes d'information et la cybersécurité, je
+          construis des infrastructures fiables et sécurisées. En formation BTS
+          SIO SISR, je combine rigueur technique et esprit d'équipe pour relever
+          des défis concrets.
+        </p>
+        <div class="panel-cta">
+          <a href="#projects" class="btn btn-primary">Voir mes projets →</a>
+          <a href="#contact" class="btn btn-outline">Me contacter</a>
+        </div>
 
-    <div id="intro-panel">
-      <div class="deco-circle-top"></div>
-      <div class="deco-circle-bot"></div>
-      <div class="deco-arch"></div>
-
-      <p class="panel-eyebrow">— Portfolio · Technicien Systèmes &amp; Réseaux</p>
-      <h1 class="panel-name">Louis<strong>BERTRAND</strong></h1>
-      <p class="panel-tagline">BTS SIO • Infrastructure • Cybersécurité</p>
-      <div class="panel-divider"></div>
-      <p class="panel-about">Passionné par les systèmes d'information et la cybersécurité, je construis des infrastructures fiables et sécurisées. En formation BTS SIO SISR, je combine rigueur technique et esprit d'équipe pour relever des défis concrets.</p>
-      <div class="panel-cta">
-        <a href="#projects" class="btn btn-primary">Voir mes projets →</a>
-        <a href="#contact"  class="btn btn-outline">Me contacter</a>
+        <div id="drag-handle">
+          <svg viewBox="0 0 24 24">
+            <polyline points="15 18 9 12 15 6" />
+            <polyline points="9 18 3 12 9 6" opacity=".5" />
+          </svg>
+        </div>
+        <div id="drag-progress"></div>
+        <div id="drag-hint"><span>←</span> Tirer pour ouvrir</div>
       </div>
 
-      <div id="drag-handle">
-        <svg viewBox="0 0 24 24">
-          <polyline points="15 18 9 12 15 6"/>
-          <polyline points="9 18 3 12 9 6" opacity=".5"/>
-        </svg>
-      </div>
-      <div id="drag-progress"></div>
-      <div id="drag-hint"><span>←</span> Tirer pour ouvrir</div>
-    </div>
-
-    <div id="intro-right">
-      <div class="intro-info-grid">
-        <div class="intro-info-card"><div class="intro-info-label">Email</div><a href="mailto:louis.bertrand713@gmail.com" class="intro-info-value" style="color:var(--brown-mid);text-decoration:none;cursor:pointer;">louis.bertrand713@gmail.com</a></div>
-        <div class="intro-info-card"><div class="intro-info-label">Téléphone</div><a href="tel:+33784937312" class="intro-info-value" style="color:var(--brown-mid);text-decoration:none;cursor:pointer;">+33 7 84 93 73 12</a></div>
-        <div class="intro-info-card"><div class="intro-info-label">Localisation</div><a href="https://www.google.com/maps/search/Chartres,+France" target="_blank" class="intro-info-value" style="color:var(--brown-mid);text-decoration:none;cursor:pointer;">Chartres, France</a></div>
-        <div class="intro-info-card"><div class="intro-info-label">Disponibilité</div><div class="intro-info-value">Stage / Alternance</div></div>
-        <div class="intro-social">
-          <a href="https://github.com/Louis-bertrand-gh" target="_blank" class="intro-social-link">⚡ GitHub</a>
-          <a href="https://linkedin.com/in/bertrand-louis"  target="_blank" class="intro-social-link">💼 LinkedIn</a>
+      <div id="intro-right">
+        <div class="intro-info-grid">
+          <div class="intro-info-card">
+            <div class="intro-info-label">Email</div>
+            <a
+              href="mailto:louis.bertrand713@gmail.com"
+              class="intro-info-value"
+              style="
+                color: var(--brown-mid);
+                text-decoration: none;
+                cursor: pointer;
+              "
+              >louis.bertrand713@gmail.com</a
+            >
+          </div>
+          <div class="intro-info-card">
+            <div class="intro-info-label">Téléphone</div>
+            <a
+              href="tel:+33784937312"
+              class="intro-info-value"
+              style="
+                color: var(--brown-mid);
+                text-decoration: none;
+                cursor: pointer;
+              "
+              >+33 7 84 93 73 12</a
+            >
+          </div>
+          <div class="intro-info-card">
+            <div class="intro-info-label">Localisation</div>
+            <a
+              href="https://www.google.com/maps/search/Chartres,+France"
+              target="_blank"
+              class="intro-info-value"
+              style="
+                color: var(--brown-mid);
+                text-decoration: none;
+                cursor: pointer;
+              "
+              >Chartres, France</a
+            >
+          </div>
+          <div class="intro-info-card">
+            <div class="intro-info-label">Disponibilité</div>
+            <div class="intro-info-value">Stage / Alternance</div>
+          </div>
+          <div class="intro-social">
+            <a
+              href="https://github.com/Louis-bertrand-gh"
+              target="_blank"
+              class="intro-social-link"
+              >⚡ GitHub</a
+            >
+            <a
+              href="https://linkedin.com/in/bertrand-louis"
+              target="_blank"
+              class="intro-social-link"
+              >💼 LinkedIn</a
+            >
+          </div>
         </div>
       </div>
     </div>
+    <div id="open-flash"></div>
 
-  </div>
-  <div id="open-flash"></div>
+    <!-- ══════════════════ PORTFOLIO ══════════════════ -->
+    <nav id="navbar">
+      <a href="#" class="nav-logo">Louis BERTRAND</a>
+      <ul class="nav-links">
+        <li><a href="#skills">Compétences</a></li>
+        <li><a href="#education">Formation</a></li>
+        <li><a href="#experience">Expériences</a></li>
+        <li><a href="#projects">Projets</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a
+        href="#contact"
+        class="btn btn-primary"
+        style="font-size: 0.78rem; padding: 0.55rem 1.2rem"
+        >Me contacter</a
+      >
+    </nav>
 
-  <!-- ══════════════════ PORTFOLIO ══════════════════ -->
-  <nav id="navbar">
-    <a href="#" class="nav-logo">Louis BERTRAND</a>
-    <ul class="nav-links">
-      <li><a href="#skills">Compétences</a></li>
-      <li><a href="#education">Formation</a></li>
-      <li><a href="#experience">Expériences</a></li>
-      <li><a href="#projects">Projets</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <a href="#contact" class="btn btn-primary" style="font-size:.78rem;padding:.55rem 1.2rem;">Me contacter</a>
-  </nav>
-
-  <main id="portfolio">
-
-    <section id="skills">
-      <div class="section-wrap">
-        <div class="section-header">
-          <span class="section-tag">Savoir-faire</span>
-          <h2 class="section-title">Mes <em>Compétences</em></h2>
-          <div class="section-line"></div>
+    <main id="portfolio">
+      <section id="skills">
+        <div class="section-wrap">
+          <div class="section-header">
+            <span class="section-tag">Savoir-faire</span>
+            <h2 class="section-title">Mes <em>Compétences</em></h2>
+            <div class="section-line"></div>
+          </div>
+          <div class="skills-grid" id="skills-grid"></div>
         </div>
-        <div class="skills-grid" id="skills-grid"></div>
-      </div>
-    </section>
+      </section>
 
-    <section id="education">
-      <div class="section-wrap">
-        <div class="section-header">
-          <span class="section-tag">Cursus</span>
-          <h2 class="section-title">Parcours <em>Scolaire</em></h2>
-          <div class="section-line"></div>
+      <section id="education">
+        <div class="section-wrap">
+          <div class="section-header">
+            <span class="section-tag">Cursus</span>
+            <h2 class="section-title">Parcours <em>Scolaire</em></h2>
+            <div class="section-line"></div>
+          </div>
+          <div class="timeline" id="edu-timeline"></div>
         </div>
-        <div class="timeline" id="edu-timeline"></div>
-      </div>
-    </section>
+      </section>
 
-    <section id="experience" style="background:var(--cream)">
-      <div class="section-wrap">
-        <div class="section-header">
-          <span class="section-tag">Terrain</span>
-          <h2 class="section-title">Expériences <em>Professionnelles</em></h2>
-          <div class="section-line"></div>
+      <section id="experience" style="background: var(--cream)">
+        <div class="section-wrap">
+          <div class="section-header">
+            <span class="section-tag">Terrain</span>
+            <h2 class="section-title">Expériences <em>Professionnelles</em></h2>
+            <div class="section-line"></div>
+          </div>
+          <div class="timeline" id="exp-timeline"></div>
         </div>
-        <div class="timeline" id="exp-timeline"></div>
-      </div>
-    </section>
+      </section>
 
-    <section id="projects">
-      <div class="section-wrap">
-        <div class="section-header">
-          <span class="section-tag">Réalisations</span>
-          <h2 class="section-title">Mes <em>Projets</em></h2>
-          <div class="section-line"></div>
+      <section id="projects">
+        <div class="section-wrap">
+          <div class="section-header">
+            <span class="section-tag">Réalisations</span>
+            <h2 class="section-title">Mes <em>Projets</em></h2>
+            <div class="section-line"></div>
+          </div>
+          <div class="projects-grid" id="projects-grid"></div>
         </div>
-        <div class="projects-grid" id="projects-grid"></div>
-      </div>
-    </section>
+      </section>
 
-    <div id="about-strip">
-      <div class="about-inner">
-        <div><p class="about-block-title">Qualités</p><div class="quality-list" id="quality-list"></div></div>
-        <div><p class="about-block-title">Langues</p><div id="lang-list"></div></div>
-        <div><p class="about-block-title">Centres d'intérêt</p><div class="interest-list" id="interest-list"></div></div>
-      </div>
-    </div>
-
-    <section id="contact">
-      <div class="section-wrap">
-        <div class="contact-inner">
-          <h2 class="contact-title">Travaillons <em>ensemble</em></h2>
-          <p class="contact-sub">Disponible pour un stage ou une alternance dans les domaines des systèmes, réseaux ou de la cybersécurité.</p>
-          <div class="contact-links" id="contact-links"></div>
+      <div id="about-strip">
+        <div class="about-inner">
+          <div>
+            <p class="about-block-title">Qualités</p>
+            <div class="quality-list" id="quality-list"></div>
+          </div>
+          <div>
+            <p class="about-block-title">Langues</p>
+            <div id="lang-list"></div>
+          </div>
+          <div>
+            <p class="about-block-title">Centres d'intérêt</p>
+            <div class="interest-list" id="interest-list"></div>
+          </div>
         </div>
       </div>
-    </section>
 
-  </main>
+      <section id="contact">
+        <div class="section-wrap">
+          <div class="contact-inner">
+            <h2 class="contact-title">Travaillons <em>ensemble</em></h2>
+            <p class="contact-sub">
+              Disponible pour un stage ou une alternance dans les domaines des
+              systèmes, réseaux ou de la cybersécurité.
+            </p>
+            <div class="contact-links" id="contact-links"></div>
+          </div>
+        </div>
+      </section>
+    </main>
 
-  <footer><p id="site-footer"></p></footer>
+    <footer><p id="site-footer"></p></footer>
 
-  <script>
-  /* ================================================================
+    <script>
+      /* ================================================================
      INTRO — drag / touch / ouverture
   ================================================================ */
-  (() => {
-    'use strict';
-    const intro    = document.getElementById('intro');
-    const panel    = document.getElementById('intro-panel');
-    const progress = document.getElementById('drag-progress');
-    const flash    = document.getElementById('open-flash');
-    const hint     = document.getElementById('drag-hint');
+      (() => {
+        "use strict";
+        const intro = document.getElementById("intro");
+        const panel = document.getElementById("intro-panel");
+        const progress = document.getElementById("drag-progress");
+        const flash = document.getElementById("open-flash");
+        const hint = document.getElementById("drag-hint");
 
-    const THRESHOLD    = 0.40;
-    const OPEN_DURATION = 360;
+        const THRESHOLD = 0.4;
+        const OPEN_DURATION = 360;
 
-    let isDragging = false, startX = 0, currentDrag = 0, panelWidth = 0, opened = false, rafId = null, hasMovedEnough = false;
+        let isDragging = false,
+          startX = 0,
+          currentDrag = 0,
+          panelWidth = 0,
+          opened = false,
+          rafId = null,
+          hasMovedEnough = false;
 
-    const getX       = e => e.touches ? e.touches[0].clientX : e.clientX;
-    const clampDrag  = px => Math.min(0, Math.max(-panelWidth, px));
-    const setProgress = r => { if (progress) progress.style.width = Math.min(r * 100, 100) + '%'; };
-    const setShadow   = r => { panel.style.boxShadow = `${12 + r*8}px 0 ${48 + r*24}px rgba(0,0,0,${(0.30 - r*0.20).toFixed(2)})`; };
+        const getX = (e) => (e.touches ? e.touches[0].clientX : e.clientX);
+        const clampDrag = (px) => Math.min(0, Math.max(-panelWidth, px));
+        const setProgress = (r) => {
+          if (progress) progress.style.width = Math.min(r * 100, 100) + "%";
+        };
+        const setShadow = (r) => {
+          panel.style.boxShadow = `${12 + r * 8}px 0 ${48 + r * 24}px rgba(0,0,0,${(0.3 - r * 0.2).toFixed(2)})`;
+        };
 
-    const applyTransform = () => { panel.style.transform = `translateX(${currentDrag}px)`; rafId = null; };
-    const scheduleRaf    = () => { if (!rafId) rafId = requestAnimationFrame(applyTransform); };
+        const applyTransform = () => {
+          panel.style.transform = `translateX(${currentDrag}px)`;
+          rafId = null;
+        };
+        const scheduleRaf = () => {
+          if (!rafId) rafId = requestAnimationFrame(applyTransform);
+        };
 
-    const openIntro = () => {
-      if (opened) return;
-      opened = true;
-      isDragging = false;
-      panel.classList.remove('is-dragging', 'past-threshold');
-      panel.classList.add('is-opening');
-      intro.classList.add('is-opening');
-      if (flash) { flash.classList.add('flash-in'); setTimeout(() => flash.classList.replace('flash-in', 'flash-out'), 80); }
-      if (hint)  hint.style.opacity = '0';
-      setProgress(1);
-      setTimeout(() => {
-        intro.classList.add('is-gone');
-        document.documentElement.classList.remove('locked');
-        document.getElementById('navbar')?.classList.add('nav-visible');
-        document.getElementById('portfolio')?.classList.add('is-revealed');
-        document.dispatchEvent(new CustomEvent('intro:opened'));
-        if (flash) flash.style.display = 'none';
-      }, OPEN_DURATION + 120);
-    };
+        const openIntro = () => {
+          if (opened) return;
+          opened = true;
+          isDragging = false;
+          panel.classList.remove("is-dragging", "past-threshold");
+          panel.classList.add("is-opening");
+          intro.classList.add("is-opening");
+          if (flash) {
+            flash.classList.add("flash-in");
+            setTimeout(
+              () => flash.classList.replace("flash-in", "flash-out"),
+              80,
+            );
+          }
+          if (hint) hint.style.opacity = "0";
+          setProgress(1);
+          setTimeout(() => {
+            intro.classList.add("is-gone");
+            document.documentElement.classList.remove("locked");
+            document.getElementById("navbar")?.classList.add("nav-visible");
+            document.getElementById("portfolio")?.classList.add("is-revealed");
+            document.dispatchEvent(new CustomEvent("intro:opened"));
+            if (flash) flash.style.display = "none";
+          }, OPEN_DURATION + 120);
+        };
 
-    const snapBack = () => {
-      panel.classList.remove('is-dragging', 'past-threshold');
-      panel.style.transition = 'transform 380ms cubic-bezier(0.34,1.56,0.64,1), box-shadow 380ms ease';
-      panel.style.transform  = 'translateX(0)';
-      panel.style.boxShadow  = '';
-      setProgress(0);
-      setTimeout(() => { panel.style.transition = ''; }, 400);
-    };
+        const snapBack = () => {
+          panel.classList.remove("is-dragging", "past-threshold");
+          panel.style.transition =
+            "transform 380ms cubic-bezier(0.34,1.56,0.64,1), box-shadow 380ms ease";
+          panel.style.transform = "translateX(0)";
+          panel.style.boxShadow = "";
+          setProgress(0);
+          setTimeout(() => {
+            panel.style.transition = "";
+          }, 400);
+        };
 
-    /* Souris */
-    panel.addEventListener('mousedown', e => {
-      if (opened) return;
-      isDragging = true; startX = getX(e); panelWidth = panel.getBoundingClientRect().width; hasMovedEnough = false;
-      panel.classList.add('is-dragging'); panel.style.transition = 'none';
-      document.addEventListener('mousemove', onMove, { passive: true });
-      document.addEventListener('mouseup', onUp);
-    });
+        /* Souris */
+        panel.addEventListener("mousedown", (e) => {
+          if (opened) return;
+          isDragging = true;
+          startX = getX(e);
+          panelWidth = panel.getBoundingClientRect().width;
+          hasMovedEnough = false;
+          panel.classList.add("is-dragging");
+          panel.style.transition = "none";
+          document.addEventListener("mousemove", onMove, { passive: true });
+          document.addEventListener("mouseup", onUp);
+        });
 
-    const onMove = e => {
-      if (!isDragging) return;
-      currentDrag = clampDrag(getX(e) - startX);
-      const r = Math.abs(currentDrag) / panelWidth;
-      if (Math.abs(currentDrag) > 5) hasMovedEnough = true;
-      scheduleRaf(); setProgress(r); setShadow(r);
-      panel.classList.toggle('past-threshold', r >= THRESHOLD);
-    };
+        const onMove = (e) => {
+          if (!isDragging) return;
+          currentDrag = clampDrag(getX(e) - startX);
+          const r = Math.abs(currentDrag) / panelWidth;
+          if (Math.abs(currentDrag) > 5) hasMovedEnough = true;
+          scheduleRaf();
+          setProgress(r);
+          setShadow(r);
+          panel.classList.toggle("past-threshold", r >= THRESHOLD);
+        };
 
-    const onUp = () => {
-      document.removeEventListener('mousemove', onMove);
-      document.removeEventListener('mouseup', onUp);
-      if (!isDragging) return;
-      isDragging = false;
-      if (!hasMovedEnough) {
-        openIntro();
-      } else {
-        Math.abs(currentDrag) / panelWidth >= THRESHOLD ? openIntro() : snapBack();
-      }
-    };
-
-    /* Touch */
-    panel.addEventListener('touchstart', e => {
-      if (opened) return;
-      isDragging = true; startX = getX(e); panelWidth = panel.getBoundingClientRect().width; hasMovedEnough = false;
-      panel.classList.add('is-dragging'); panel.style.transition = 'none';
-    }, { passive: true });
-
-    panel.addEventListener('touchmove', e => {
-      if (!isDragging) return;
-      currentDrag = clampDrag(getX(e) - startX);
-      const r = Math.abs(currentDrag) / panelWidth;
-      if (Math.abs(currentDrag) > 5) hasMovedEnough = true;
-      scheduleRaf(); setProgress(r); setShadow(r);
-      if (Math.abs(currentDrag) > 8) e.preventDefault();
-      panel.classList.toggle('past-threshold', r >= THRESHOLD);
-    }, { passive: false });
-
-    const onTouchEnd = () => {
-      if (!isDragging) return;
-      isDragging = false;
-      if (!hasMovedEnough) {
-        openIntro();
-      } else {
-        Math.abs(currentDrag) / panelWidth >= THRESHOLD ? openIntro() : snapBack();
-      }
-    };
-    panel.addEventListener('touchend',    onTouchEnd);
-    panel.addEventListener('touchcancel', onTouchEnd);
-    panel.addEventListener('dragstart',   e => e.preventDefault());
-
-    /* Accessibilité clavier */
-    panel.setAttribute('tabindex', '0');
-    panel.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openIntro(); } });
-
-    /* Cartes info cliquables */
-    document.querySelectorAll('.intro-info-card').forEach(card => {
-      const link = card.querySelector('a');
-      if (link) {
-        card.classList.add('clickable');
-        card.addEventListener('click', () => {
-          if (link.href.startsWith('http')) {
-            window.open(link.href, '_blank');
+        const onUp = () => {
+          document.removeEventListener("mousemove", onMove);
+          document.removeEventListener("mouseup", onUp);
+          if (!isDragging) return;
+          isDragging = false;
+          if (!hasMovedEnough) {
+            openIntro();
           } else {
-            window.location.href = link.href;
+            Math.abs(currentDrag) / panelWidth >= THRESHOLD
+              ? openIntro()
+              : snapBack();
+          }
+        };
+
+        /* Touch */
+        panel.addEventListener(
+          "touchstart",
+          (e) => {
+            if (opened) return;
+            isDragging = true;
+            startX = getX(e);
+            panelWidth = panel.getBoundingClientRect().width;
+            hasMovedEnough = false;
+            panel.classList.add("is-dragging");
+            panel.style.transition = "none";
+          },
+          { passive: true },
+        );
+
+        panel.addEventListener(
+          "touchmove",
+          (e) => {
+            if (!isDragging) return;
+            currentDrag = clampDrag(getX(e) - startX);
+            const r = Math.abs(currentDrag) / panelWidth;
+            if (Math.abs(currentDrag) > 5) hasMovedEnough = true;
+            scheduleRaf();
+            setProgress(r);
+            setShadow(r);
+            if (Math.abs(currentDrag) > 8) e.preventDefault();
+            panel.classList.toggle("past-threshold", r >= THRESHOLD);
+          },
+          { passive: false },
+        );
+
+        const onTouchEnd = () => {
+          if (!isDragging) return;
+          isDragging = false;
+          if (!hasMovedEnough) {
+            openIntro();
+          } else {
+            Math.abs(currentDrag) / panelWidth >= THRESHOLD
+              ? openIntro()
+              : snapBack();
+          }
+        };
+        panel.addEventListener("touchend", onTouchEnd);
+        panel.addEventListener("touchcancel", onTouchEnd);
+        panel.addEventListener("dragstart", (e) => e.preventDefault());
+
+        /* Accessibilité clavier */
+        panel.setAttribute("tabindex", "0");
+        panel.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            openIntro();
           }
         });
-      }
-    });
 
-    /* Boutons CTA avec lien vers sections */
-    document.querySelectorAll('.panel-cta a').forEach(btn => {
-      btn.addEventListener('click', e => {
-        const href = btn.getAttribute('href');
-        if (href && (href === '#projects' || href === '#contact')) {
-          e.preventDefault();
-          openIntro();
-          setTimeout(() => {
-            const target = document.querySelector(href);
-            if (target) target.scrollIntoView({ behavior: 'smooth' });
-          }, OPEN_DURATION + 200);
-        }
-      });
-    });
-  })();
+        /* Cartes info cliquables */
+        document.querySelectorAll(".intro-info-card").forEach((card) => {
+          const link = card.querySelector("a");
+          if (link) {
+            card.classList.add("clickable");
+            card.addEventListener("click", () => {
+              if (link.href.startsWith("http")) {
+                window.open(link.href, "_blank");
+              } else {
+                window.location.href = link.href;
+              }
+            });
+          }
+        });
 
-  /* ================================================================
+        /* Boutons CTA avec lien vers sections */
+        document.querySelectorAll(".panel-cta a").forEach((btn) => {
+          btn.addEventListener("click", (e) => {
+            const href = btn.getAttribute("href");
+            if (href && (href === "#projects" || href === "#contact")) {
+              e.preventDefault();
+              openIntro();
+              setTimeout(() => {
+                const target = document.querySelector(href);
+                if (target) target.scrollIntoView({ behavior: "smooth" });
+              }, OPEN_DURATION + 200);
+            }
+          });
+        });
+      })();
+
+      /* ================================================================
      PORTFOLIO — build DOM + interactions
   ================================================================ */
-  (() => {
-    'use strict';
+      (() => {
+        "use strict";
 
-    const buildDOM = () => {
-      /* Compétences */
-      const sg = document.getElementById('skills-grid');
-      DATA.skills.forEach(s => {
-        sg.insertAdjacentHTML('beforeend',
-          `<div class="skill-card">
+        const buildDOM = () => {
+          /* Compétences */
+          const sg = document.getElementById("skills-grid");
+          DATA.skills.forEach((s) => {
+            sg.insertAdjacentHTML(
+              "beforeend",
+              `<div class="skill-card">
             <div class="skill-icon">${s.icon}</div>
             <div class="skill-cat">${s.category}</div>
-            <ul class="skill-items">${s.items.map(i=>`<li>${i}</li>`).join('')}</ul>
-          </div>`);
-      });
+            <ul class="skill-items">${s.items.map((i) => `<li>${i}</li>`).join("")}</ul>
+          </div>`,
+            );
+          });
 
-      /* Formation */
-      const et = document.getElementById('edu-timeline');
-      DATA.education.forEach(e => {
-        et.insertAdjacentHTML('beforeend',
-          `<div class="timeline-item">
+          /* Formation */
+          const et = document.getElementById("edu-timeline");
+          DATA.education.forEach((e) => {
+            et.insertAdjacentHTML(
+              "beforeend",
+              `<div class="timeline-item">
             <div class="timeline-period">${e.period}</div>
             <div class="timeline-title">${e.title}</div>
             <div class="timeline-sub">${e.option}</div>
             <div class="timeline-school">${e.school}</div>
-          </div>`);
-      });
+          </div>`,
+            );
+          });
 
-      /* Expériences */
-      const xt = document.getElementById('exp-timeline');
-      DATA.experiences.forEach(e => {
-        xt.insertAdjacentHTML('beforeend',
-          `<div class="timeline-item">
+          /* Expériences */
+          const xt = document.getElementById("exp-timeline");
+          DATA.experiences.forEach((e) => {
+            xt.insertAdjacentHTML(
+              "beforeend",
+              `<div class="timeline-item">
             <div class="timeline-period">${e.period}</div>
             <div class="timeline-title">${e.role}</div>
             <div class="timeline-school">${e.company}</div>
-            <ul class="timeline-tasks">${e.tasks.map(t=>`<li>${t}</li>`).join('')}</ul>
-          </div>`);
-      });
+            <ul class="timeline-tasks">${e.tasks.map((t) => `<li>${t}</li>`).join("")}</ul>
+          </div>`,
+            );
+          });
 
-      /* Projets */
-      const pg = document.getElementById('projects-grid');
-      DATA.projects.forEach(p => {
-        pg.insertAdjacentHTML('beforeend',
-          `<div class="project-card">
+          /* Projets */
+          const pg = document.getElementById("projects-grid");
+          DATA.projects.forEach((p) => {
+            pg.insertAdjacentHTML(
+              "beforeend",
+              `<div class="project-card">
             <div class="project-title">${p.title}</div>
             <p class="project-desc">${p.desc}</p>
-            <div class="tag-row">${p.tech.map(t=>`<span class="tag">${t}</span>`).join('')}</div>
+            <div class="tag-row">${p.tech.map((t) => `<span class="tag">${t}</span>`).join("")}</div>
             <a href="${p.link}" target="_blank" class="project-link">Voir le projet →</a>
-          </div>`);
-      });
+          </div>`,
+            );
+          });
 
-      /* Qualités */
-      const ql = document.getElementById('quality-list');
-      DATA.qualities.forEach(q => ql.insertAdjacentHTML('beforeend', `<span class="quality-chip">${q}</span>`));
+          /* Qualités */
+          const ql = document.getElementById("quality-list");
+          DATA.qualities.forEach((q) =>
+            ql.insertAdjacentHTML(
+              "beforeend",
+              `<span class="quality-chip">${q}</span>`,
+            ),
+          );
 
-      /* Langues */
-      const ll = document.getElementById('lang-list');
-      DATA.languages.forEach(l => {
-        ll.insertAdjacentHTML('beforeend',
-          `<div class="lang-item">
+          /* Langues */
+          const ll = document.getElementById("lang-list");
+          DATA.languages.forEach((l) => {
+            ll.insertAdjacentHTML(
+              "beforeend",
+              `<div class="lang-item">
             <div class="lang-name"><span>${l.lang}</span><span>${l.level}</span></div>
             <div class="lang-bar"><div class="lang-fill" data-pct="${l.pct}"></div></div>
-          </div>`);
-      });
-
-      /* Intérêts */
-      const il = document.getElementById('interest-list');
-      DATA.interests.forEach(i => il.insertAdjacentHTML('beforeend', `<span class="interest-chip">${i}</span>`));
-
-      /* Contact */
-      const cl = document.getElementById('contact-links');
-      [ { label: `✉️ ${DATA.email}`, href: `mailto:${DATA.email}` },
-        { label: '⚡ GitHub',         href: DATA.github },
-        { label: '💼 LinkedIn',       href: DATA.linkedin }
-      ].forEach(l => cl.insertAdjacentHTML('beforeend', `<a href="${l.href}" target="_blank" class="btn btn-primary">${l.label}</a>`));
-
-      /* Footer */
-      document.getElementById('site-footer').textContent = `© ${new Date().getFullYear()} ${DATA.name} · Tous droits réservés`;
-    };
-
-    const initReveal = () => {
-      const io = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (!entry.isIntersecting) return;
-          const idx = [...entry.target.parentElement.children].indexOf(entry.target);
-          entry.target.style.transitionDelay = `${idx * 80}ms`;
-          entry.target.classList.add('in-view');
-          io.unobserve(entry.target);
-        });
-      }, { threshold: 0.12 });
-      document.querySelectorAll('.timeline-item, .project-card').forEach(el => io.observe(el));
-    };
-
-    const initLangBars = () => {
-      const strip = document.getElementById('about-strip');
-      if (!strip) return;
-      new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (!entry.isIntersecting) return;
-          entry.target.querySelectorAll('.lang-fill').forEach(b => {
-            setTimeout(() => { b.style.width = b.dataset.pct + '%'; }, 200);
+          </div>`,
+            );
           });
-        });
-      }, { threshold: 0.4 }).observe(strip);
-    };
 
-    const initNav = () => {
-      const nav = document.getElementById('navbar');
-      window.addEventListener('scroll', () => nav.classList.toggle('nav-visible', scrollY > 60), { passive: true });
-    };
+          /* Intérêts */
+          const il = document.getElementById("interest-list");
+          DATA.interests.forEach((i) =>
+            il.insertAdjacentHTML(
+              "beforeend",
+              `<span class="interest-chip">${i}</span>`,
+            ),
+          );
 
-    document.addEventListener('intro:opened', () => {
-      buildDOM();
-      initReveal();
-      initLangBars();
-      initNav();
-    }, { once: true });
-  })();
-  </script>
-</body>
+          /* Contact */
+          const cl = document.getElementById("contact-links");
+          [
+            { label: `✉️ ${DATA.email}`, href: `mailto:${DATA.email}` },
+            { label: "⚡ GitHub", href: DATA.github },
+            { label: "💼 LinkedIn", href: DATA.linkedin },
+          ].forEach((l) =>
+            cl.insertAdjacentHTML(
+              "beforeend",
+              `<a href="${l.href}" target="_blank" class="btn btn-primary">${l.label}</a>`,
+            ),
+          );
+
+          /* Footer */
+          document.getElementById("site-footer").textContent =
+            `© ${new Date().getFullYear()} ${DATA.name} · Tous droits réservés`;
+        };
+
+        const initReveal = () => {
+          const io = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (!entry.isIntersecting) return;
+                const idx = [...entry.target.parentElement.children].indexOf(
+                  entry.target,
+                );
+                entry.target.style.transitionDelay = `${idx * 80}ms`;
+                entry.target.classList.add("in-view");
+                io.unobserve(entry.target);
+              });
+            },
+            { threshold: 0.12 },
+          );
+          document
+            .querySelectorAll(".timeline-item, .project-card")
+            .forEach((el) => io.observe(el));
+        };
+
+        const initLangBars = () => {
+          const strip = document.getElementById("about-strip");
+          if (!strip) return;
+          new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (!entry.isIntersecting) return;
+                entry.target.querySelectorAll(".lang-fill").forEach((b) => {
+                  setTimeout(() => {
+                    b.style.width = b.dataset.pct + "%";
+                  }, 200);
+                });
+              });
+            },
+            { threshold: 0.4 },
+          ).observe(strip);
+        };
+
+        const initNav = () => {
+          const nav = document.getElementById("navbar");
+          window.addEventListener(
+            "scroll",
+            () => nav.classList.toggle("nav-visible", scrollY > 60),
+            { passive: true },
+          );
+        };
+
+        const initProjectCards = () => {
+          document.querySelectorAll(".project-card").forEach((card) => {
+            card.addEventListener("click", (e) => {
+              if (e.target.tagName === "A") return;
+              const link = card.querySelector(".project-link");
+              if (link) window.open(link.href, "_blank");
+            });
+          });
+        };
+
+        document.addEventListener(
+          "intro:opened",
+          () => {
+            buildDOM();
+            initReveal();
+            initLangBars();
+            initNav();
+            initProjectCards();
+          },
+          { once: true },
+        );
+      })();
+    </script>
+  </body>
 </html>

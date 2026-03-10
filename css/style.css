@@ -1,0 +1,503 @@
+/* ================================================================
+   style.css — Animation post-it + styles pages projet
+   Importé par index.html ET toutes les pages /projects/
+   ================================================================ */
+
+/* ----------------------------------------------------------------
+   1. VARIABLES PARTAGÉES (dupliquées ici pour les pages projet)
+   ---------------------------------------------------------------- */
+:root {
+  --cream: #f5f0e8;
+  --warm-white: #faf8f4;
+  --brown-dark: #5c3d2e;
+  --brown-mid: #8b6355;
+  --brown-light: #c4a882;
+  --brown-pale: #e8d9c8;
+  --text-main: #2c1f14;
+  --text-muted: #7a6255;
+  --border: rgba(139, 99, 85, 0.15);
+  --shadow-sm: 0 2px 12px rgba(44, 31, 20, 0.07);
+  --shadow-md: 0 8px 32px rgba(44, 31, 20, 0.11);
+  --shadow-lift: 0 24px 60px rgba(44, 31, 20, 0.22);
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "DM Sans", system-ui, sans-serif;
+  --radius-lg: 1.75rem;
+}
+
+/* ================================================================
+   2. ANIMATION POST-IT — HOVER
+   Léger soulèvement au survol pour indiquer la cliquabilité
+   ================================================================ */
+
+/* La card a besoin d'un curseur pointer et d'un contexte GPU */
+.project-card {
+  cursor: pointer;
+  /* Prépare le GPU avant toute interaction */
+  will-change: transform, box-shadow;
+  /* On garde la transition existante mais on surcharge sur hover/active */
+  transform-origin: center bottom; /* point d'ancrage : bas de la card */
+}
+
+/* Hover : léger soulèvement */
+.project-card:hover {
+  transform: translateY(-6px) rotate(0.4deg) !important;
+  box-shadow: 0 16px 48px rgba(44, 31, 20, 0.15) !important;
+  transition:
+    transform 220ms cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 220ms ease !important;
+}
+
+/* ================================================================
+   3. ANIMATION POST-IT — CLIC (classe ajoutée par JS)
+   Séquence : soulève → tourne → agrandit → fade out
+   ================================================================ */
+
+/* État pendant l'animation de décollage */
+.project-card.is-peeling {
+  /* Désactive la transition hover pour laisser JS gérer */
+  transition:
+    transform 380ms cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    box-shadow 380ms ease,
+    opacity 200ms ease 280ms !important;
+
+  transform: translateY(-18px) rotate(2.5deg) scale(1.05) !important;
+
+  box-shadow:
+    0 32px 80px rgba(44, 31, 20, 0.25),
+    0 8px 24px rgba(44, 31, 20, 0.12) !important;
+
+  opacity: 0.85;
+  z-index: 10;
+  position: relative;
+}
+
+/* ================================================================
+   4. OVERLAY DE TRANSITION (fond qui s'assombrit au clic)
+   ================================================================ */
+
+#card-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9;
+  background: var(--warm-white);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 280ms ease;
+}
+
+#card-overlay.is-active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* ================================================================
+   5. PAGES PROJET — BASE
+   ================================================================ */
+
+/* Reset et base pour les pages projet */
+.project-page *,
+.project-page *::before,
+.project-page *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.project-page {
+  font-family: var(--font-sans);
+  background: var(--warm-white);
+  color: var(--text-main);
+  line-height: 1.65;
+  min-height: 100vh;
+}
+
+/* ── Barre de navigation projet ── */
+.project-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 4rem;
+  background: rgba(250, 248, 244, 0.94);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+}
+
+.project-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--brown-mid);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: #fff;
+  transition:
+    background 0.2s,
+    transform 0.2s,
+    color 0.2s;
+  white-space: nowrap;
+}
+.project-back:hover {
+  background: var(--brown-pale);
+  color: var(--brown-dark);
+  transform: translateX(-2px);
+}
+.project-back svg {
+  width: 14px;
+  height: 14px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex-shrink: 0;
+}
+
+.project-nav-title {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--brown-dark);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ── Hero projet ── */
+.project-hero {
+  background: var(--brown-dark);
+  padding: 5rem 4rem 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Décors identiques au panneau principal */
+.project-hero::before {
+  content: "";
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.025);
+  pointer-events: none;
+}
+.project-hero::after {
+  content: "";
+  position: absolute;
+  bottom: -60px;
+  left: -40px;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.02);
+  pointer-events: none;
+}
+
+.project-hero-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.project-hero-eyebrow {
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--brown-light);
+  margin-bottom: 1rem;
+  opacity: 0.9;
+}
+
+.project-hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
+  font-weight: 300;
+  color: var(--cream);
+  line-height: 1.08;
+  margin-bottom: 1.5rem;
+}
+
+.project-hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.project-hero-tag {
+  font-size: 0.75rem;
+  padding: 0.3rem 0.85rem;
+  border-radius: 999px;
+  background: rgba(196, 168, 130, 0.18);
+  border: 1px solid rgba(196, 168, 130, 0.35);
+  color: var(--brown-pale);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+/* ── Contenu principal ── */
+.project-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 4rem;
+}
+
+/* ── Sections du contenu ── */
+.project-section {
+  margin-bottom: 3.5rem;
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.55s ease,
+    transform 0.55s ease;
+}
+.project-section.in-view {
+  opacity: 1;
+  transform: none;
+}
+
+.project-section-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--brown-light);
+  margin-bottom: 0.8rem;
+  font-weight: 500;
+}
+
+.project-section-title {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.project-section p {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+  margin-bottom: 0.9rem;
+}
+.project-section p:last-child {
+  margin-bottom: 0;
+}
+
+/* Ligne séparatrice légère */
+.project-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 3rem 0;
+}
+
+/* ── Grille de détails ── */
+.project-details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+  margin-top: 1.2rem;
+}
+
+.project-detail-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.2rem 1.4rem;
+  box-shadow: var(--shadow-sm);
+}
+.project-detail-label {
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--brown-light);
+  margin-bottom: 0.35rem;
+  font-weight: 500;
+}
+.project-detail-value {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--text-main);
+}
+
+/* ── Liste à points style CV ── */
+.project-list {
+  list-style: none;
+  margin-top: 0.8rem;
+}
+.project-list li {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  padding: 0.4rem 0;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  line-height: 1.6;
+}
+.project-list li:last-child {
+  border: none;
+}
+.project-list li::before {
+  content: "▸";
+  color: var(--brown-light);
+  font-size: 0.65rem;
+  flex-shrink: 0;
+  margin-top: 0.35rem;
+}
+
+/* ── Bloc de code / stack ── */
+.project-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.8rem;
+}
+.project-stack-tag {
+  font-size: 0.78rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  background: var(--brown-pale);
+  color: var(--brown-dark);
+  font-weight: 500;
+  border: 1px solid rgba(139, 99, 85, 0.12);
+  letter-spacing: 0.03em;
+}
+
+/* ── Bloc highlight / encadré ── */
+.project-highlight {
+  background: var(--cream);
+  border-left: 3px solid var(--brown-light);
+  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+  padding: 1.4rem 1.8rem;
+  margin: 1.5rem 0;
+}
+.project-highlight p {
+  font-style: italic;
+  color: var(--brown-mid);
+  font-size: 0.92rem;
+}
+
+/* ── Placeholder image ── */
+.project-img-placeholder {
+  width: 100%;
+  aspect-ratio: 16/7;
+  background: var(--cream);
+  border: 1.5px dashed var(--brown-pale);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  margin: 1.5rem 0;
+  color: var(--brown-light);
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.project-img-placeholder svg {
+  width: 32px;
+  height: 32px;
+  stroke: var(--brown-light);
+  fill: none;
+  stroke-width: 1.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.6;
+}
+
+/* ── Footer projet ── */
+.project-footer {
+  background: var(--cream);
+  padding: 3rem 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.project-footer-text {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+.project-footer-text strong {
+  color: var(--brown-dark);
+  font-weight: 600;
+}
+
+.project-footer-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+/* Bouton principal réutilisable */
+.btn-project {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.72rem 1.5rem;
+  border-radius: 999px;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+  white-space: nowrap;
+}
+.btn-project:hover {
+  transform: translateY(-2px);
+}
+.btn-project-primary {
+  background: var(--brown-dark);
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(92, 61, 46, 0.25);
+}
+.btn-project-primary:hover {
+  box-shadow: 0 8px 24px rgba(92, 61, 46, 0.35);
+}
+.btn-project-outline {
+  background: #fff;
+  color: var(--brown-mid);
+  border: 1.5px solid var(--border);
+}
+.btn-project-outline:hover {
+  background: var(--brown-pale);
+  color: var(--brown-dark);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .project-nav {
+    padding: 1rem 1.5rem;
+  }
+  .project-hero {
+    padding: 4rem 1.8rem 3rem;
+  }
+  .project-content {
+    padding: 2.5rem 1.8rem;
+  }
+  .project-footer {
+    padding: 2rem 1.8rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .project-nav-title {
+    display: none;
+  }
+}

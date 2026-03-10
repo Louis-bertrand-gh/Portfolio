@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Audit Sécurité Réseau — Louis BERTRAND</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body class="project-page">
+    <nav class="project-nav">
+      <a href="../index.html" class="project-back">
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6" /></svg>
+        Retour au portfolio
+      </a>
+      <span class="project-nav-title">Audit Sécurité Réseau</span>
+    </nav>
+
+    <header class="project-hero">
+      <div class="project-hero-inner">
+        <p class="project-hero-eyebrow">— Projet · Cybersécurité</p>
+        <h1 class="project-hero-title">Audit Sécurité<br />Réseau</h1>
+        <div class="project-hero-tags">
+          <span class="project-hero-tag">Nmap</span>
+          <span class="project-hero-tag">Wireshark</span>
+          <span class="project-hero-tag">pfSense</span>
+          <span class="project-hero-tag">Cybersécurité</span>
+          <span class="project-hero-tag">Audit</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="project-content">
+      <div class="project-section">
+        <div class="project-details-grid">
+          <div class="project-detail-card">
+            <div class="project-detail-label">Contexte</div>
+            <div class="project-detail-value">Projet BTS SIO</div>
+          </div>
+          <div class="project-detail-card">
+            <div class="project-detail-label">Durée</div>
+            <div class="project-detail-value">3 semaines</div>
+          </div>
+          <div class="project-detail-card">
+            <div class="project-detail-label">Rôle</div>
+            <div class="project-detail-value">Auditeur sécurité</div>
+          </div>
+          <div class="project-detail-card">
+            <div class="project-detail-label">Année</div>
+            <div class="project-detail-value">2025</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-divider"></div>
+
+      <div class="project-section">
+        <p class="project-section-label">Description</p>
+        <h2 class="project-section-title">Évaluation de la posture sécurité</h2>
+        <p>
+          Ce projet consiste en un audit complet de la sécurité d'une
+          infrastructure réseau simulée. L'objectif est d'identifier les
+          vulnérabilités existantes, d'évaluer les risques associés et de
+          proposer des mesures correctives adaptées.
+        </p>
+        <p>
+          L'audit couvre les couches réseau, système et applicative selon une
+          méthodologie structurée.
+        </p>
+      </div>
+
+      <div class="project-divider"></div>
+
+      <div class="project-section">
+        <p class="project-section-label">Méthodologie</p>
+        <h2 class="project-section-title">Phases de l'audit</h2>
+        <ul class="project-list">
+          <li>
+            <strong>Phase 1 — Reconnaissance :</strong> cartographie réseau avec
+            Nmap, identification des hôtes actifs et des services exposés
+          </li>
+          <li>
+            <strong>Phase 2 — Analyse des flux :</strong> capture et analyse des
+            trames avec Wireshark pour détecter des communications non chiffrées
+          </li>
+          <li>
+            <strong>Phase 3 — Évaluation des règles de filtrage :</strong> revue
+            des ACL pfSense et identification des règles trop permissives
+          </li>
+          <li>
+            <strong>Phase 4 — Test de configuration :</strong> vérification des
+            mots de passe, comptes par défaut, versions obsolètes
+          </li>
+          <li>
+            <strong>Phase 5 — Rapport :</strong> rédaction du rapport d'audit
+            avec scoring CVSS et recommandations priorisées
+          </li>
+        </ul>
+      </div>
+
+      <div class="project-section">
+        <div class="project-img-placeholder">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+          </svg>
+          Rapport d'audit — Synthèse des vulnérabilités
+        </div>
+      </div>
+
+      <div class="project-section">
+        <p class="project-section-label">Résultats</p>
+        <h2 class="project-section-title">Vulnérabilités identifiées</h2>
+        <div class="project-highlight">
+          <p>
+            L'audit a révélé plusieurs failles de configuration importantes,
+            notamment des services exposés sans nécessité et des règles de
+            filtrage trop permissives entre VLANs.
+          </p>
+        </div>
+        <ul class="project-list">
+          <li>
+            3 services exposés inutilement sur Internet (Telnet, FTP non
+            chiffré)
+          </li>
+          <li>
+            Règles inter-VLAN trop permissives permettant des latéralisations
+          </li>
+          <li>Mots de passe par défaut non changés sur 2 équipements</li>
+          <li>
+            Logs de sécurité pfSense non configurés pour la détection
+            d'intrusion
+          </li>
+        </ul>
+      </div>
+
+      <div class="project-section">
+        <p class="project-section-label">Technologies utilisées</p>
+        <div class="project-stack">
+          <span class="project-stack-tag">Nmap 7.94</span>
+          <span class="project-stack-tag">Wireshark</span>
+          <span class="project-stack-tag">pfSense</span>
+          <span class="project-stack-tag">CVSS v3.1</span>
+          <span class="project-stack-tag">Metasploit (modules de scan)</span>
+          <span class="project-stack-tag">OpenVAS</span>
+        </div>
+      </div>
+    </main>
+
+    <footer class="project-footer">
+      <div class="project-footer-text">
+        Projet réalisé par <strong>Louis BERTRAND</strong> · BTS SIO SISR
+      </div>
+      <div class="project-footer-actions">
+        <a href="ansible-advanced.html" class="btn-project btn-project-outline"
+          >Projet suivant →</a
+        >
+        <a href="../index.html" class="btn-project btn-project-primary"
+          >← Retour au portfolio</a
+        >
+      </div>
+    </footer>
+
+    <script src="../../js/script.js"></script>
+  </body>
+</html>

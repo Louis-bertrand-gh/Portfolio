@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Infrastructure Réseau Complète — Louis BERTRAND</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../css/style.css" />
+  </head>
+  <body class="project-page">
+    <!-- ── Navigation ── -->
+    <nav class="project-nav">
+      <a href="../index.html" class="project-back">
+        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6" /></svg>
+        Retour au portfolio
+      </a>
+      <span class="project-nav-title">Infrastructure Réseau Complète</span>
+    </nav>
+
+    <!-- ── Hero ── -->
+    <header class="project-hero">
+      <div class="project-hero-inner">
+        <p class="project-hero-eyebrow">— Projet · Systèmes &amp; Réseaux</p>
+        <h1 class="project-hero-title">Infrastructure<br />Réseau Complète</h1>
+        <div class="project-hero-tags">
+          <span class="project-hero-tag">Proxmox</span>
+          <span class="project-hero-tag">pfSense</span>
+          <span class="project-hero-tag">Active Directory</span>
+          <span class="project-hero-tag">VLAN</span>
+          <span class="project-hero-tag">Infrastructure</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- ── Contenu ── -->
+    <main class="project-content">
+      <!-- Détails rapides -->
+      <div class="project-section">
+        <div class="project-details-grid">
+          <div class="project-detail-card">
+            <div class="project-detail-label">Contexte</div>
+            <div class="project-detail-value">Projet BTS SIO</div>
+          </div>
+          <div class="project-detail-card">
+            <div class="project-detail-label">Durée</div>
+            <div class="project-detail-value">4 semaines</div>
+          </div>
+          <div class="project-detail-card">
+            <div class="project-detail-label">Rôle</div>
+            <div class="project-detail-value">Administrateur réseau</div>
+          </div>
+          <div class="project-detail-card">
+            <div class="project-detail-label">Année</div>
+            <div class="project-detail-value">Novembre 2025 — Mai 2026</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-divider"></div>
+
+      <!-- Description -->
+      <div class="project-section">
+        <p class="project-section-label">Description</p>
+        <h2 class="project-section-title">Contexte du projet</h2>
+        <p>
+          Dans le cadre de ma formation BTS SIO option SISR, j'ai déployé une
+          infrastructure réseau complète en environnement virtualisé. L'objectif
+          était de simuler un réseau d'entreprise avec segmentation, gestion
+          centralisée des utilisateurs et sécurisation du périmètre.
+        </p>
+        <p>
+          Ce projet m'a permis de mettre en pratique l'ensemble des compétences
+          techniques acquises en formation : virtualisation, configuration
+          réseau, administration système et cybersécurité.
+        </p>
+      </div>
+
+      <div class="project-divider"></div>
+
+      <!-- Objectifs -->
+      <div class="project-section">
+        <p class="project-section-label">Objectifs</p>
+        <h2 class="project-section-title">Ce qui a été réalisé</h2>
+        <ul class="project-list">
+          <li>
+            Déploiement d'un hyperviseur Proxmox comme socle de virtualisation
+          </li>
+          <li>
+            Configuration d'un pare-feu pfSense avec règles de filtrage par VLAN
+          </li>
+          <li>
+            Mise en place d'un contrôleur de domaine Active Directory (Windows
+            Server)
+          </li>
+          <li>
+            Segmentation réseau par VLAN (Administration, Utilisateurs, DMZ,
+            IoT)
+          </li>
+          <li>Configuration des services DHCP, DNS et NTP centralisés</li>
+          <li>Rédaction d'une documentation technique complète</li>
+        </ul>
+      </div>
+
+      <!-- Placeholder capture -->
+      <div class="project-section">
+        <div class="project-img-placeholder">
+          <svg viewBox="0 0 24 24">
+            <rect x="3" y="3" width="18" height="18" rx="2" />
+            <circle cx="8.5" cy="8.5" r="1.5" />
+            <polyline points="21 15 16 10 5 21" />
+          </svg>
+          Schéma d'architecture réseau
+        </div>
+      </div>
+
+      <!-- Architecture -->
+      <div class="project-section">
+        <p class="project-section-label">Architecture</p>
+        <h2 class="project-section-title">Topologie réseau</h2>
+        <div class="project-highlight">
+          <p>
+            L'infrastructure est structurée autour d'un cœur de réseau pfSense
+            qui assure le routage inter-VLAN et le filtrage des flux entre les
+            différentes zones de sécurité.
+          </p>
+        </div>
+        <ul class="project-list">
+          <li>
+            <strong>VLAN 10 — Administration :</strong> serveurs, contrôleurs de
+            domaine
+          </li>
+          <li>
+            <strong>VLAN 20 — Utilisateurs :</strong> postes de travail, accès
+            Internet filtré
+          </li>
+          <li>
+            <strong>VLAN 30 — DMZ :</strong> services exposés (Apache, FTP)
+          </li>
+          <li>
+            <strong>VLAN 99 — Management :</strong> accès administration des
+            équipements
+          </li>
+        </ul>
+      </div>
+
+      <!-- Stack -->
+      <div class="project-section">
+        <p class="project-section-label">Technologies utilisées</p>
+        <h2 class="project-section-title">Stack technique</h2>
+        <div class="project-stack">
+          <span class="project-stack-tag">Proxmox VE</span>
+          <span class="project-stack-tag">pfSense</span>
+          <span class="project-stack-tag">Windows Server 2022</span>
+          <span class="project-stack-tag">Active Directory</span>
+          <span class="project-stack-tag">DHCP / DNS</span>
+          <span class="project-stack-tag">VLAN 802.1Q</span>
+          <span class="project-stack-tag">Apache</span>
+          <span class="project-stack-tag">Wireshark</span>
+        </div>
+      </div>
+
+      <!-- Résultats -->
+      <div class="project-section">
+        <p class="project-section-label">Résultats</p>
+        <h2 class="project-section-title">Bilan du projet</h2>
+        <p>
+          L'infrastructure déployée est entièrement fonctionnelle. La
+          segmentation VLAN garantit l'isolation des flux, le pare-feu applique
+          les politiques de sécurité définies et le contrôleur de domaine
+          centralise l'authentification de l'ensemble des utilisateurs.
+        </p>
+        <p>
+          Ce projet a renforcé ma compréhension de la conception d'architectures
+          réseau sécurisées et de la gestion des identités en entreprise.
+        </p>
+      </div>
+    </main>
+
+    <!-- ── Footer ── -->
+    <footer class="project-footer">
+      <div class="project-footer-text">
+        Projet réalisé par <strong>Louis BERTRAND</strong> · BTS SIO SISR
+      </div>
+      <div class="project-footer-actions">
+        <a href="proxmox-server.html" class="btn-project btn-project-outline"
+          >Projet suivant →</a
+        >
+        <a href="../index.html" class="btn-project btn-project-primary"
+          >← Retour au portfolio</a
+        >
+      </div>
+    </footer>
+
+    <script src="../../js/script.js"></script>
+  </body>
+</html>
