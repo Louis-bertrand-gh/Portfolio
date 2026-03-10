@@ -1,0 +1,45 @@
+/* ================================================================
+   VARIABLES — design tokens centralisés
+   Modifie uniquement ce fichier pour changer toute la charte
+   ================================================================ */
+
+:root {
+  /* ── Palette ── */
+  --cream:          #f5f0e8;
+  --warm-white:     #faf8f4;
+  --brown-dark:     #5c3d2e;
+  --brown-mid:      #8b6355;
+  --brown-light:    #c4a882;
+  --brown-pale:     #e8d9c8;
+  --text-main:      #2c1f14;
+  --text-muted:     #7a6255;
+  --border:         rgba(139, 99, 85, 0.15);
+
+  /* ── Ombres ── */
+  --shadow-sm:  0 2px 12px rgba(44, 31, 20, 0.07);
+  --shadow-md:  0 8px 32px  rgba(44, 31, 20, 0.11);
+  --shadow-lg:  0 20px 60px rgba(44, 31, 20, 0.16);
+  --panel-shadow: 12px 0 48px rgba(0, 0, 0, 0.30);
+
+  /* ── Typographie ── */
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans:  'DM Sans', system-ui, sans-serif;
+
+  /* ── Rayons ── */
+  --radius-sm:  .5rem;
+  --radius-md:  1rem;
+  --radius-lg:  1.75rem;
+  --radius-xl:  2.5rem;
+
+  /* ── Intro panel ── */
+  --panel-ratio:     55vw;   /* largeur du panneau sur desktop */
+  --drag-threshold:  0.40;   /* fraction du panneau à tirer pour déclencher l'ouverture */
+  --open-duration:   720ms;  /* durée de l'animation d'ouverture */
+  --open-easing:     cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+@media (max-width: 768px) {
+  :root {
+    --panel-ratio: 100vw;
+  }
+}
