@@ -42,7 +42,7 @@ jobs:
   deploy:
     environment:
       name: github-pages
-      url: ./html/index.html
+      url: https://louis-bertrand-gh.github.io/Portfolio/html/index.html
     runs-on: ubuntu-latest
     needs: build
     steps:
