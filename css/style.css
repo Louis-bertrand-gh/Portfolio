@@ -370,6 +370,15 @@
   font-weight: 500;
   border: 1px solid rgba(139, 99, 85, 0.12);
   letter-spacing: 0.03em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.project-stack-icon {
+  width: 14px;
+  height: 14px;
+  opacity: 0.8;
 }
 
 /* ── Bloc highlight / encadré ── */

@@ -14,7 +14,7 @@
   <body class="project-page">
     <!-- ── Navigation ── -->
     <nav class="project-nav">
-      <a href="../index.html" class="project-back">
+      <a href="../index.html#projects" class="project-back">
         <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6" /></svg>
         Retour au portfolio
       </a>
@@ -28,7 +28,7 @@
         <h1 class="project-hero-title">Infrastructure<br />Réseau Complète</h1>
         <div class="project-hero-tags">
           <span class="project-hero-tag">Proxmox</span>
-          <span class="project-hero-tag">pfSense</span>
+          <span class="project-hero-tag">OpenSense</span>
           <span class="project-hero-tag">Active Directory</span>
           <span class="project-hero-tag">VLAN</span>
           <span class="project-hero-tag">Infrastructure</span>
@@ -47,7 +47,7 @@
           </div>
           <div class="project-detail-card">
             <div class="project-detail-label">Durée</div>
-            <div class="project-detail-value">4 semaines</div>
+            <div class="project-detail-value">6 mois</div>
           </div>
           <div class="project-detail-card">
             <div class="project-detail-label">Rôle</div>
@@ -55,7 +55,7 @@
           </div>
           <div class="project-detail-card">
             <div class="project-detail-label">Année</div>
-            <div class="project-detail-value">Novembre 2025 — Mai 2026</div>
+            <div class="project-detail-value">2025 — 2026</div>
           </div>
         </div>
       </div>
@@ -67,10 +67,15 @@
         <p class="project-section-label">Description</p>
         <h2 class="project-section-title">Contexte du projet</h2>
         <p>
-          Dans le cadre de ma formation BTS SIO option SISR, j'ai déployé une
-          infrastructure réseau complète en environnement virtualisé. L'objectif
-          était de simuler un réseau d'entreprise avec segmentation, gestion
-          centralisée des utilisateurs et sécurisation du périmètre.
+          Dans le cadre de ma formation BTS SIO option SISR, En groupe de 3
+          étudiants, nous avons conçu et déployé une infrastructure réseau
+          complète et concrète dans un labo de test.
+        </p>
+        <p>
+          L'objectif était de simuler un réseau d'entreprise avec segmentation,
+          Amélioration en continu , ajout de differents services, et mise en
+          place de mesures de sécurité pour protéger les données et les
+          utilisateurs.
         </p>
         <p>
           Ce projet m'a permis de mettre en pratique l'ensemble des compétences
@@ -88,19 +93,16 @@
         <ul class="project-list">
           <li>
             Déploiement d'un hyperviseur Proxmox comme socle de virtualisation
+            pour heberger nos machines virtuelles
           </li>
           <li>
-            Configuration d'un pare-feu pfSense avec règles de filtrage par VLAN
+            Sécurisation de l'infrastructure (VLAN, ACL, politiques de groupe,
+            parefeu Opensense et StormShield)
           </li>
           <li>
-            Mise en place d'un contrôleur de domaine Active Directory (Windows
-            Server)
+            Installation et configuration des services (DHCP, DNS, AD, Apache,
+            HMail, Graylog, BDD, Ansible, ReverseProxy, Docker, Wordpress )
           </li>
-          <li>
-            Segmentation réseau par VLAN (Administration, Utilisateurs, DMZ,
-            IoT)
-          </li>
-          <li>Configuration des services DHCP, DNS et NTP centralisés</li>
           <li>Rédaction d'une documentation technique complète</li>
         </ul>
       </div>
@@ -152,14 +154,82 @@
         <p class="project-section-label">Technologies utilisées</p>
         <h2 class="project-section-title">Stack technique</h2>
         <div class="project-stack">
-          <span class="project-stack-tag">Proxmox VE</span>
-          <span class="project-stack-tag">pfSense</span>
+          <span class="project-stack-tag">
+            <img
+              src="../../images/icons/proxmox.svg"
+              alt=""
+              class="project-stack-icon"
+            />
+            Proxmox VE
+          </span>
+          <span class="project-stack-tag">
+            <img
+              src="../../images/icons/opnsense.svg"
+              alt=""
+              class="project-stack-icon"
+            />
+            OpnSense
+          </span>
           <span class="project-stack-tag">Windows Server 2022</span>
           <span class="project-stack-tag">Active Directory</span>
           <span class="project-stack-tag">DHCP / DNS</span>
-          <span class="project-stack-tag">VLAN 802.1Q</span>
-          <span class="project-stack-tag">Apache</span>
-          <span class="project-stack-tag">Wireshark</span>
+          <span class="project-stack-tag">
+            <img
+              src="../../images/icons/cisco.svg"
+              alt=""
+              class="project-stack-icon"
+            />
+            Cisco
+          </span>
+          <span class="project-stack-tag">
+            <img
+              src="../../images/icons/apache.svg"
+              alt=""
+              class="project-stack-icon"
+            />
+            Apache
+          </span>
+
+          <span class="project-stack-tag">
+            <img
+              src="../../images/icons/ansible.svg"
+              alt=""
+              class="project-stack-icon"
+            />
+            Ansible
+          </span>
+          <span class="project-stack-tag">
+            <img
+              src="../../images/icons/docker.svg"
+              alt=""
+              class="project-stack-icon"
+            />
+            Docker
+          </span>
+          <span class="project-stack-tag">
+            <img
+              src="../../images/icons/graylog.svg"
+              alt=""
+              class="project-stack-icon"
+            />
+            Graylog
+          </span>
+          <span class="project-stack-tag">
+            <img
+              src="../../images/icons/wordpress.svg"
+              alt=""
+              class="project-stack-icon"
+            />
+            WordPress
+          </span>
+          <span class="project-stack-tag">
+            <img
+              src="../../images/icons/mysql.svg"
+              alt=""
+              class="project-stack-icon"
+            />
+            MySQL
+          </span>
         </div>
       </div>
 
@@ -168,14 +238,13 @@
         <p class="project-section-label">Résultats</p>
         <h2 class="project-section-title">Bilan du projet</h2>
         <p>
-          L'infrastructure déployée est entièrement fonctionnelle. La
-          segmentation VLAN garantit l'isolation des flux, le pare-feu applique
-          les politiques de sécurité définies et le contrôleur de domaine
-          centralise l'authentification de l'ensemble des utilisateurs.
+          L'infrastructure déployée est entièrement fonctionnelle. Nous sommme
+          toujours en amélioration continue, en ajoutant de nouveaux services et
+          en renforçant la sécurité.
         </p>
         <p>
-          Ce projet a renforcé ma compréhension de la conception d'architectures
-          réseau sécurisées et de la gestion des identités en entreprise.
+          Ce projet a significativement renforcé ma compréhension et mes
+          compétences en Réseaux
         </p>
       </div>
     </main>
@@ -183,7 +252,9 @@
     <!-- ── Footer ── -->
     <footer class="project-footer">
       <div class="project-footer-text">
-        Projet réalisé par <strong>Louis BERTRAND</strong> · BTS SIO SISR
+        Projet réalisé par
+        <strong> Louis BERTRAND - Cyriak LAUNAY et Antoine MESANGE </strong> ·
+        BTS SIO SISR
       </div>
       <div class="project-footer-actions">
         <a href="proxmox-server.html" class="btn-project btn-project-outline"

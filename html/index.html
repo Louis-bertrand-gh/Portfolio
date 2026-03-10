@@ -40,12 +40,12 @@
           {
             category: "Réseaux",
             icon: "🌐",
-            items: ["Switch / Routeur", "Pare-feu pfSense", "VLAN", "TCP/IP"],
+            items: ["Switch / Routeur", "Pare-feu OpnSense", "VLAN", "Shemas"],
           },
           {
             category: "Services",
             icon: "⚙️",
-            items: ["Active Directory", "DHCP / DNS", "Apache", "Ansible"],
+            items: ["Active Directory", " DNS", "Apache", "Ansible", "GLPI"],
           },
           {
             category: "Cybersécurité",
@@ -54,6 +54,7 @@
               "Analyse des menaces",
               "Sécurité réseau",
               "Gestion des accès",
+              "SSH",
             ],
           },
           {
@@ -61,7 +62,7 @@
             icon: "📋",
             items: [
               "Documentation technique",
-              "Support utilisateur",
+              "Planification de Tâches Kanban",
               "Conduite de projet IT",
             ],
           },
@@ -88,71 +89,104 @@
             tasks: [
               "Support utilisateur GLPI.",
               "Projet configuration matérielle.",
-              ".",
+            ],
+            skills: [
+              "Gestion de projet",
+              "GLPI",
+              "Diagnostic",
+              "Interaction entre professionnel",
+              "Adaptabilité",
             ],
           },
           {
             period: "Juil. — Nov. 2025",
             role: "Saisonnier — Tourisme",
             company: "Huttopia Village de Senonches",
-            tasks: [
-              "Amélioration des compétences de service au bar.",
-              "Développement des compétences de service en cuisine.",
-              "Maîtrise des règles d'hygiène.",
+            tasks: ["Service au bar.", "Service en cuisine."],
+            skills: [
+              "Communication client",
+              "Gestion du stress",
+              "Organisation",
+              "Réactivité",
             ],
           },
           {
             period: "Mai — Juin 2025",
             role: "Stagiaire — Informatique",
             company: "Entreprise XTrempro - Senonches",
-            tasks: ["Support hardware.", "Installation Logiciel.", "."],
+            tasks: [
+              "Support hardware.",
+              "Installation Logiciel.",
+              "Configuration système.",
+            ],
+            skills: [
+              "Support utilisateur",
+              "Démontage et remontage PC",
+              "Dépannage",
+              "Windows",
+            ],
           },
           {
             period: "Juil. — Août 2024",
             role: "Saisonnier — Tourisme",
             company: "Huttopia Village de Senonches",
-            tasks: [
-              "Travail en équipe et en autonomie.",
-              "Organisation et gestion de l'inventaire.",
+            tasks: ["Service au bar."],
+            skills: [
+              "Travail en équipe",
+              "Autonomie",
+              "Organisation",
+              "Gestion d'inventaire",
             ],
           },
         ],
         projects: [
           {
             title: "Infrastructure Réseau Complète",
-            tech: ["Proxmox", "pfSense", "Active Directory"],
-            desc: "Déploiement d'une infrastructure virtualisée complète avec gestion centralisée des utilisateurs, pare-feu et segmentation VLAN.",
+            tech: ["Réseaux", "Services", "Cybersécurité"],
+            desc: "Déploiement d'une infrastructure réseau complète dans un labo de test.",
             link: "projects/network-infrastructure.html",
+            image: "images/infrastructure.png",
+            zoom: 100,
           },
           {
             title: "Serveur de Virtualisation",
             tech: ["Proxmox", "VirtualBox", "Debian"],
             desc: "Hyperviseur Proxmox hébergeant plusieurs VMs avec snapshots automatisés et gestion fine des ressources.",
             link: "projects/proxmox-server.html",
+            image: "images/proxmox.png",
+            zoom: 100,
           },
           {
             title: "Déploiement Ansible",
             tech: ["Ansible", "Linux", "YAML"],
             desc: "Automatisation du déploiement de serveurs Linux via des playbooks Ansible pour réduire les erreurs de configuration.",
             link: "projects/ansible-deployment.html",
+            image: "images/ansible-deployment.png",
+            zoom: 100,
           },
           {
             title: "Audit Sécurité Réseau",
             tech: ["Nmap", "Wireshark", "pfSense"],
             desc: "Évaluation des vulnérabilités d'une infrastructure réseau, identification des menaces et mise en place de contre-mesures.",
             link: "projects/network-audit.html",
+            image: "images/network-audit.png",
+            zoom: 100,
           },
           {
             title: "Déploiement Ansible",
             tech: ["Ansible", "Linux", "YAML"],
             desc: "Automatisation du déploiement de serveurs Linux via des playbooks Ansible pour réduire les erreurs de configuration.",
             link: "projects/ansible-advanced.html",
+            image: "images/ansible-advanced.png",
+            zoom: 100,
           },
           {
             title: "Documentation Technique",
             tech: ["Markdown", "GitHub Pages", "Documentation"],
-            desc: "Documentação complète d'un projet avec architecture, procédures et guides d'utilisation sur plateau sportludique.",
+            desc: "Documentation complète d'un projet avec architecture, procédures et guides d'utilisation sur plateau sportludique.",
             link: "https://xola-max.github.io/gp-orleans-sportludique2025-2026/",
+            image: "/images/documentation-projet.png",
+            zoom: 150,
           },
         ],
         qualities: [
@@ -165,7 +199,7 @@
         ],
         languages: [
           { lang: "Français", level: "Natif", pct: 100 },
-          { lang: "Anglais", level: "B1", pct: 50 },
+          { lang: "Anglais", level: "B2", pct: 70 },
         ],
         interests: ["💻 Technologie", "🎬 Cinéma", "⚽ Sport"],
       };
@@ -195,8 +229,6 @@
         --radius-lg: 1.75rem;
         --panel-ratio: 55vw;
         --drag-threshold: 0.4;
-        --open-duration: 720;
-        --open-easing: cubic-bezier(0.76, 0, 0.24, 1);
       }
       @media (max-width: 768px) {
         :root {
@@ -443,7 +475,9 @@
       .intro-info-value {
         font-size: 0.9rem;
         font-weight: 500;
-        color: var(--text-main);
+        color: var(--brown-mid);
+        text-decoration: none;
+        cursor: pointer;
       }
       .intro-social {
         grid-column: 1 / -1;
@@ -658,6 +692,11 @@
         font-weight: 600;
         color: var(--brown-dark);
         text-decoration: none;
+        letter-spacing: 0.02em;
+      }
+      .navbar-btn {
+        font-size: 0.78rem !important;
+        padding: 0.55rem 1.2rem !important;
       }
       .nav-links {
         display: flex;
@@ -816,13 +855,14 @@
       }
       .timeline-item {
         position: relative;
-        padding-left: 2.2rem;
+        padding-left: 2.8rem;
         margin-bottom: 2.8rem;
         opacity: 0;
         transform: translateX(-16px);
         transition:
           opacity 0.55s ease,
           transform 0.55s ease;
+        border-radius: 0.8rem;
       }
       .timeline-item.in-view {
         opacity: 1;
@@ -846,6 +886,7 @@
         text-transform: uppercase;
         color: var(--brown-light);
         margin-bottom: 0.35rem;
+        transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       }
       .timeline-title {
         font-family: var(--font-serif);
@@ -882,6 +923,72 @@
         flex-shrink: 0;
       }
 
+      .exp-item-with-skills {
+        transition: all 0.25s ease;
+      }
+      .exp-item-with-skills:hover {
+        transform: scale(1.03);
+        box-shadow: 0 8px 24px rgba(44, 31, 20, 0.15);
+        padding-top: 0.6rem;
+        padding-bottom: 0.6rem;
+      }
+      .exp-content-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        margin-top: 1rem;
+      }
+      .exp-column-tasks {
+        flex: 1;
+      }
+      .exp-column-skills {
+        flex: 1;
+      }
+      .exp-skills-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        align-items: flex-start;
+      }
+      .exp-skill-tag {
+        font-size: 0.7rem;
+        padding: 0.28rem 0.65rem;
+        border-radius: 999px;
+        background: var(--brown-pale);
+        color: var(--brown-dark);
+        font-weight: 500;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        opacity: 0.85;
+        width: fit-content;
+        display: inline-flex;
+        align-items: center;
+        white-space: nowrap;
+      }
+      .exp-item-with-skills:hover .exp-skill-tag {
+        background: var(--brown-dark);
+        color: var(--brown-pale);
+        opacity: 1;
+        transform: translateY(-2px);
+      }
+      .exp-item-with-skills:hover .timeline-period {
+        color: var(--brown-dark);
+      }
+      @media (max-width: 900px) {
+        .exp-content-wrapper {
+          grid-template-columns: 1fr;
+          gap: 1rem;
+        }
+        .exp-column-skills {
+          border-top: 1px solid var(--border);
+          padding-top: 1rem;
+        }
+      }
+      @media (max-width: 600px) {
+        .exp-item-with-skills:hover {
+          transform: scale(1.01);
+        }
+      }
+
       /* Projects */
       #projects {
         background: var(--cream);
@@ -901,6 +1008,7 @@
         gap: 0.9rem;
         position: relative;
         overflow: hidden;
+        cursor: pointer;
         opacity: 0;
         transform: translateY(20px);
         transition:
@@ -912,11 +1020,8 @@
         opacity: 1;
         transform: none;
       }
-      .project-card {
-        cursor: pointer;
-      }
       .project-card:hover {
-        transform: translateY(-5px) !important;
+        transform: translateY(-5px);
         box-shadow: var(--shadow-md);
       }
       .project-card::after {
@@ -936,6 +1041,17 @@
         font-size: 1.25rem;
         font-weight: 600;
         color: var(--text-main);
+      }
+      .project-image {
+        width: 100%;
+        height: 160px;
+        background-color: #f0f0f0;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: var(--image-zoom, 100%);
+        border-radius: var(--radius-md);
+        margin: 0.8rem 0;
+        overflow: hidden;
       }
       .project-desc {
         font-size: 0.87rem;
@@ -971,6 +1087,9 @@
       }
 
       /* About strip */
+      #experience {
+        background: var(--cream);
+      }
       #about-strip {
         background: var(--brown-dark);
         padding: 5rem 0;
@@ -1138,24 +1257,12 @@
             <a
               href="mailto:louis.bertrand713@gmail.com"
               class="intro-info-value"
-              style="
-                color: var(--brown-mid);
-                text-decoration: none;
-                cursor: pointer;
-              "
               >louis.bertrand713@gmail.com</a
             >
           </div>
           <div class="intro-info-card">
             <div class="intro-info-label">Téléphone</div>
-            <a
-              href="tel:+33784937312"
-              class="intro-info-value"
-              style="
-                color: var(--brown-mid);
-                text-decoration: none;
-                cursor: pointer;
-              "
+            <a href="tel:+33784937312" class="intro-info-value"
               >+33 7 84 93 73 12</a
             >
           </div>
@@ -1165,11 +1272,6 @@
               href="https://www.google.com/maps/search/Chartres,+France"
               target="_blank"
               class="intro-info-value"
-              style="
-                color: var(--brown-mid);
-                text-decoration: none;
-                cursor: pointer;
-              "
               >Chartres, France</a
             >
           </div>
@@ -1206,12 +1308,7 @@
         <li><a href="#projects">Projets</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <a
-        href="#contact"
-        class="btn btn-primary"
-        style="font-size: 0.78rem; padding: 0.55rem 1.2rem"
-        >Me contacter</a
-      >
+      <a href="#contact" class="btn btn-primary navbar-btn">Me contacter</a>
     </nav>
 
     <main id="portfolio">
@@ -1237,7 +1334,7 @@
         </div>
       </section>
 
-      <section id="experience" style="background: var(--cream)">
+      <section id="experience">
         <div class="section-wrap">
           <div class="section-header">
             <span class="section-tag">Terrain</span>
@@ -1533,11 +1630,18 @@
           DATA.experiences.forEach((e) => {
             xt.insertAdjacentHTML(
               "beforeend",
-              `<div class="timeline-item">
+              `<div class="timeline-item exp-item-with-skills">
             <div class="timeline-period">${e.period}</div>
             <div class="timeline-title">${e.role}</div>
             <div class="timeline-school">${e.company}</div>
-            <ul class="timeline-tasks">${e.tasks.map((t) => `<li>${t}</li>`).join("")}</ul>
+            <div class="exp-content-wrapper">
+              <div class="exp-column-tasks">
+                <ul class="timeline-tasks">${e.tasks.map((t) => `<li>${t}</li>`).join("")}</ul>
+              </div>
+              <div class="exp-column-skills">
+                <div class="exp-skills-tags">${e.skills.map((s) => `<span class="exp-skill-tag">${s}</span>`).join("")}</div>
+              </div>
+            </div>
           </div>`,
             );
           });
@@ -1549,9 +1653,10 @@
               "beforeend",
               `<div class="project-card">
             <div class="project-title">${p.title}</div>
+            <div class="project-image" style="--image-zoom: ${p.zoom || 100}%; background-image: url('${p.image}');"></div>
             <p class="project-desc">${p.desc}</p>
             <div class="tag-row">${p.tech.map((t) => `<span class="tag">${t}</span>`).join("")}</div>
-            <a href="${p.link}" target="_blank" class="project-link">Voir le projet →</a>
+            <a href="${p.link}" class="project-link">Voir le projet →</a>
           </div>`,
             );
           });
@@ -1656,7 +1761,7 @@
             card.addEventListener("click", (e) => {
               if (e.target.tagName === "A") return;
               const link = card.querySelector(".project-link");
-              if (link) window.open(link.href, "_blank");
+              if (link) window.location.href = link.href;
             });
           });
         };
