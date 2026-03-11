@@ -13,6 +13,7 @@
     <!-- ============================================================
        ✏️  DONNÉES — seul bloc à modifier pour personnaliser
        ============================================================ -->
+    <script src="../js/projects-data.js"></script>
     <script>
       const DATA = {
         name: "Louis BERTRAND",
@@ -139,56 +140,7 @@
             ],
           },
         ],
-        projects: [
-          {
-            title: "Infrastructure Réseau Complète",
-            tech: ["Réseaux", "Services", "Cybersécurité"],
-            desc: "Déploiement d'une infrastructure réseau complète dans un labo de test.",
-            link: "projects/network-infrastructure.html",
-            image: "images/infrastructure.png",
-            zoom: 100,
-          },
-          {
-            title: "Serveur de Virtualisation",
-            tech: ["Proxmox", "VirtualBox", "Debian"],
-            desc: "Hyperviseur Proxmox hébergeant plusieurs VMs avec snapshots automatisés et gestion fine des ressources.",
-            link: "projects/proxmox-server.html",
-            image: "images/proxmox.png",
-            zoom: 100,
-          },
-          {
-            title: "Déploiement Ansible",
-            tech: ["Ansible", "Linux", "YAML"],
-            desc: "Automatisation du déploiement de serveurs Linux via des playbooks Ansible pour réduire les erreurs de configuration.",
-            link: "projects/ansible-deployment.html",
-            image: "images/ansible-deployment.png",
-            zoom: 100,
-          },
-          {
-            title: "Audit Sécurité Réseau",
-            tech: ["Nmap", "Wireshark", "pfSense"],
-            desc: "Évaluation des vulnérabilités d'une infrastructure réseau, identification des menaces et mise en place de contre-mesures.",
-            link: "projects/network-audit.html",
-            image: "images/network-audit.png",
-            zoom: 100,
-          },
-          {
-            title: "Déploiement Ansible",
-            tech: ["Ansible", "Linux", "YAML"],
-            desc: "Automatisation du déploiement de serveurs Linux via des playbooks Ansible pour réduire les erreurs de configuration.",
-            link: "projects/ansible-advanced.html",
-            image: "images/ansible-advanced.png",
-            zoom: 100,
-          },
-          {
-            title: "Documentation Technique",
-            tech: ["Markdown", "GitHub Pages", "Documentation"],
-            desc: "Documentation complète d'un projet avec architecture, procédures et guides d'utilisation sur plateau sportludique.",
-            link: "https://xola-max.github.io/gp-orleans-sportludique2025-2026/",
-            image: "/images/documentation-projet.png",
-            zoom: 150,
-          },
-        ],
+        projects: PROJECTS_LIST,
         qualities: [
           "Esprit d'équipe",
           "Polyvalent",
