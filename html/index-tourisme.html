@@ -353,7 +353,8 @@
         width: 124px;
         height: 150px;
         opacity: 0.72;
-        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 160"><path d="M86,0 C84,24 94,44 82,74 C70,102 74,126 64,160" stroke="%23e8d7bb" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M64,62 C56,72 58,88 50,102" stroke="%23e8d7bb" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M92,70 C84,82 88,98 80,112" stroke="%23e8d7bb" stroke-width="3" fill="none" stroke-linecap="round"/><ellipse cx="56" cy="86" rx="8" ry="6" fill="%2387a85c"/><ellipse cx="86" cy="94" rx="8" ry="6" fill="%2393b468"/></svg>') center top / contain no-repeat;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 160"><path d="M86,0 C84,24 94,44 82,74 C70,102 74,126 64,160" stroke="%23e8d7bb" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M64,62 C56,72 58,88 50,102" stroke="%23e8d7bb" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M92,70 C84,82 88,98 80,112" stroke="%23e8d7bb" stroke-width="3" fill="none" stroke-linecap="round"/><ellipse cx="56" cy="86" rx="8" ry="6" fill="%2387a85c"/><ellipse cx="86" cy="94" rx="8" ry="6" fill="%2393b468"/></svg>')
+          center top / contain no-repeat;
         filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.18));
       }
       .deco-liane-garland {
@@ -1374,7 +1375,8 @@
         border-top: 1px solid var(--border);
       }
       [data-theme="dark"] .deco-lianes-intro::after {
-        filter: drop-shadow(0 8px 14px rgba(0, 0, 0, 0.45)) brightness(1.08) saturate(1.04);
+        filter: drop-shadow(0 8px 14px rgba(0, 0, 0, 0.45)) brightness(1.08)
+          saturate(1.04);
       }
     </style>
   </head>
@@ -1481,7 +1483,9 @@
     <nav id="navbar">
       <a href="#" class="nav-logo">Louis BERTRAND</a>
       <div class="nav-view-menu">
-        <button type="button" class="nav-view-toggle">Portfolio Tourisme</button>
+        <button type="button" class="nav-view-toggle">
+          Portfolio Tourisme
+        </button>
         <div class="nav-view-dropdown">
           <a href="index.html">Portfolio Informatique</a>
           <a href="index-tourisme.html" class="is-active">Portfolio Tourisme</a>
