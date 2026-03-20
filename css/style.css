@@ -424,6 +424,24 @@
   opacity: 0.6;
 }
 
+/* ── Logo du projet ── */
+.project-logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 0;
+  padding: 2rem;
+  background: var(--cream);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+}
+
+.project-logo {
+  max-width: 280px;
+  height: auto;
+  display: block;
+}
+
 /* ── Footer projet ── */
 .project-footer {
   background: var(--cream);

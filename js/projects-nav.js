@@ -1,9 +1,9 @@
 /**
  * projects-nav.js
  * ─────────────────────────────────────────────────────────────────
- * Gère dynamiquement le bouton « Projet suivant » :
- *  1. Corrige le href pour pointer vers un projet actif
- *  2. Ajoute une popup de preview au hover du bouton
+ * Gère dynamiquement les boutons « Projet précédent / suivant » :
+ *  1. Corrige les href pour pointer vers des projets actifs
+ *  2. Ajoute une popup de preview au hover des boutons
  *
  * Inclure APRÈS projects-data.js dans chaque page /projects/*.html
  * ─────────────────────────────────────────────────────────────────
@@ -14,9 +14,27 @@
 
   if (typeof PROJECTS_LIST === "undefined" || !PROJECTS_LIST.length) return;
 
-  /* ── Trouver le bouton "Projet suivant" ── */
-  const btn = document.querySelector(".btn-project.btn-project-outline[href]");
-  if (!btn) return;
+  const actions = document.querySelector(".project-footer-actions");
+  if (!actions) return;
+
+  /* ── Bouton suivant existant (ou fallback premier outline) ── */
+  let nextBtn = actions.querySelector(".btn-project-next");
+  if (!nextBtn) {
+    nextBtn = actions.querySelector(".btn-project.btn-project-outline[href]");
+    if (nextBtn) nextBtn.classList.add("btn-project-next");
+  }
+
+  if (!nextBtn) return;
+
+  /* ── Bouton précédent injecté automatiquement ── */
+  let prevBtn = actions.querySelector(".btn-project-prev");
+  if (!prevBtn) {
+    prevBtn = document.createElement("a");
+    prevBtn.href = "#";
+    prevBtn.className = "btn-project btn-project-outline btn-project-prev";
+    prevBtn.textContent = "← Projet precedent";
+    actions.insertBefore(prevBtn, nextBtn);
+  }
 
   /* ── Déterminer la page courante ── */
   const currentFile = window.location.pathname.split("/").pop();
@@ -26,64 +44,91 @@
     p.link.endsWith(currentFile),
   );
 
-  /* Si la page courante n'est pas dans la liste active → cacher le bouton */
+  /* Si la page courante n'est pas dans la liste active → cacher les boutons */
   if (currentIdx === -1) {
-    btn.style.display = "none";
+    prevBtn.style.display = "none";
+    nextBtn.style.display = "none";
     return;
   }
+
+  /* ── Projet précédent (boucle circulaire) ── */
+  const prevIdx =
+    (currentIdx - 1 + PROJECTS_LIST.length) % PROJECTS_LIST.length;
+  const prev = PROJECTS_LIST[prevIdx];
 
   /* ── Projet suivant (boucle circulaire) ── */
   const nextIdx = (currentIdx + 1) % PROJECTS_LIST.length;
   const next = PROJECTS_LIST[nextIdx];
 
-  /* ── Corriger le href ── */
-  if (next.link.startsWith("http")) {
-    btn.href = next.link;
-    btn.target = "_blank";
-    btn.rel = "noopener";
-  } else {
-    /* link = "projects/xxx.html" → depuis /projects/, on veut "xxx.html" */
-    btn.href = next.link.replace(/^projects\//, "");
-  }
+  const setButtonLink = (button, project) => {
+    if (project.link.startsWith("http")) {
+      button.href = project.link;
+      button.target = "_blank";
+      button.rel = "noopener";
+    } else {
+      button.href = project.link.replace(/^projects\//, "");
+      button.removeAttribute("target");
+      button.removeAttribute("rel");
+    }
+  };
 
-  /* ── Calculer le chemin image depuis html/projects/ ── */
-  let imgSrc = next.image;
-  if (!imgSrc.startsWith("http") && !imgSrc.startsWith("/")) {
-    imgSrc = "../../" + imgSrc;
-  } else if (imgSrc.startsWith("/")) {
-    imgSrc = "../.." + imgSrc;
-  }
+  const getImageSrc = (project) => {
+    let imgSrc = project.image;
+    if (!imgSrc.startsWith("http") && !imgSrc.startsWith("/")) {
+      imgSrc = "../../" + imgSrc;
+    } else if (imgSrc.startsWith("/")) {
+      imgSrc = "../.." + imgSrc;
+    }
+    return imgSrc;
+  };
 
-  /* ── Construire la preview popup ── */
+  const createPreview = (button, project, label) => {
+    const existingPreview = button.nextElementSibling;
+    if (existingPreview && existingPreview.classList.contains("next-preview")) {
+      existingPreview.remove();
+    }
+
+    const imgSrc = getImageSrc(project);
+    const preview = document.createElement("div");
+    preview.className = "next-preview";
+    preview.innerHTML =
+      '<div class="next-preview-img" style="background-image:url(\'' +
+      imgSrc +
+      "'); background-size:" +
+      (project.zoom || 100) +
+      '%"></div>' +
+      '<div class="next-preview-body">' +
+      '<span class="next-preview-label">' +
+      label +
+      "</span>" +
+      '<h4 class="next-preview-title">' +
+      project.title +
+      "</h4>" +
+      '<p class="next-preview-desc">' +
+      project.desc +
+      "</p>" +
+      '<div class="next-preview-tags">' +
+      project.tech
+        .map(function (t) {
+          return '<span class="next-preview-tag">' + t + "</span>";
+        })
+        .join("") +
+      "</div>" +
+      "</div>";
+
+    button.insertAdjacentElement("afterend", preview);
+  };
+
   /* ── Position relative sur le wrapper ── */
-  const wrapper = btn.parentElement;
+  const wrapper = actions;
   wrapper.style.position = "relative";
 
-  const preview = document.createElement("div");
-  preview.className = "next-preview";
-  preview.innerHTML =
-    '<div class="next-preview-img" style="background-image:url(\'' +
-    imgSrc +
-    "'); background-size:" +
-    (next.zoom || 100) +
-    '%"></div>' +
-    '<div class="next-preview-body">' +
-    '<span class="next-preview-label">Projet suivant</span>' +
-    '<h4 class="next-preview-title">' +
-    next.title +
-    "</h4>" +
-    '<p class="next-preview-desc">' +
-    next.desc +
-    "</p>" +
-    '<div class="next-preview-tags">' +
-    next.tech
-      .map(function (t) {
-        return '<span class="next-preview-tag">' + t + "</span>";
-      })
-      .join("") +
-    "</div>" +
-    "</div>";
+  setButtonLink(prevBtn, prev);
+  setButtonLink(nextBtn, next);
 
-  /* Insérer juste après le bouton pour que le sélecteur CSS ~ fonctionne */
-  btn.insertAdjacentElement("afterend", preview);
+  prevBtn.textContent = "← Projet precedent";
+  nextBtn.textContent = "Projet suivant →";
+
+  createPreview(prevBtn, prev, "Projet precedent");
+  createPreview(nextBtn, next, "Projet suivant");
 })();
